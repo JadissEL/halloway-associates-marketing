@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "status": "PROVISIONAL",
+  "status_note": "Tier targets sit inside locked kit band €790–€1490 (OFFER_BEACHHEAD_LOCKED). Exact Starter/Pro/Authority list prices: founder may lock in 14_OPEN_DECISIONS.",
+  "company": "Halloway Associates",
+  "site_url": "https://hallowayassociates.com",
+  "contact_email": "jadisselantaki@hallowayassociates.com",
+  "currency": "EUR",
+  "tax_note": "excl. VAT / local taxes if applicable",
+  "deposit_percent_default": 50,
+  "remainder_percent_default": 50,
+  "minimum_deposit_percent": 40,
+  "proposal_validity_days": 14,
+  "discount_stack_cap_percent": 20,
+  "public_display": {
+    "mode": "show_from",
+    "show_audit_cta": true,
+    "recommended_tier_id": "pro"
+  },
+  "pilot_beachhead": {
+    "enabled": true,
+    "niche": "influencers",
+    "geo": "Athens, Greece",
+    "slots_total": 5,
+    "slots_remaining": 5,
+    "max_percent": 15,
+    "requires_founder": true,
+    "code": "PILOT_BEACHHEAD"
+  },
+  "flagship_product": {
+    "id": "influencer_digital_kit",
+    "name": "Influencer Digital Kit",
+    "name_fr": "Kit Digital Influenceur",
+    "promise": "Turn attention into booked, paid time — site + app-like booking + digital assets.",
+    "path": "/portfolios/influencers",
+    "baseline_includes": [
+      "Creator brand website (desktop-first)",
+      "Offers catalog (collab, guidance, meet, lessons, custom)",
+      "Paid booking / request flow (Stripe; test until live)",
+      "Intake forms + confirmation states",
+      "Media kit page",
+      "Link-in-bio hub",
+      "Carte de visite (print + digital + QR to booking)",
+      "Email signature + basic launch templates",
+      "Basic SEO/meta + analytics placeholder",
+      "Handover + short training",
+      "1 round of revisions (tightly scoped)"
+    ],
+    "baseline_excludes": [
+      "Full-time community management",
+      "Running ads",
+      "Guaranteed brand deals",
+      "Unlimited revisions",
+      "Custom native iOS/Android apps",
+      "Complex CRM rebuilds",
+      "Content creation (posts/reels) retainer",
+      "Legal advice"
+    ]
+  },
+  "tiers": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "recommended": false,
+      "positioning_one_liner": "Launch paid booking fast — validate offers without bloat.",
+      "typical_buyer": "Mid creators validating paid offers",
+      "price_eur": 890,
+      "price_band_min": 790,
+      "price_band_max": 990,
+      "price_floor_eur": 790,
+      "status": "PROVISIONAL",
+      "delivery_days_min": 7,
+      "delivery_days_max": 14,
+      "deposit_percent": 50,
+      "revision_rounds": 1,
+      "support_days_after_launch": 14,
+      "includes": [
+        "Baseline Influencer Digital Kit scope",
+        "Up to 4 offer types configured",
+        "Stripe test → live path documented",
+        "1 revision round",
+        "14-day post-launch support window"
+      ],
+      "excludes": ["Priority rush", "Consulting bundle", "Premium media-kit design", "Multilingual"]
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "recommended": true,
+      "positioning_one_liner": "Full kit + conversion polish for creators monetizing now.",
+      "typical_buyer": "Serious creators already taking brand/fan money",
+      "price_eur": 1190,
+      "price_band_min": 1090,
+      "price_band_max": 1290,
+      "price_floor_eur": 990,
+      "status": "PROVISIONAL",
+      "delivery_days_min": 7,
+      "delivery_days_max": 14,
+      "deposit_percent": 50,
+      "revision_rounds": 1,
+      "support_days_after_launch": 21,
+      "includes": [
+        "Everything in Starter",
+        "Conversion-focused offer & booking UX polish",
+        "Media kit + link hub tuned",
+        "Carte + QR production-ready",
+        "21-day post-launch support",
+        "1× 45-min packaging consult (or credit)"
+      ],
+      "excludes": ["Unlimited revisions", "Native apps", "Ad management"]
+    },
+    {
+      "id": "authority",
+      "name": "Authority",
+      "recommended": false,
+      "positioning_one_liner": "Pro + extras — priority delivery path and consulting depth for personal brands.",
+      "typical_buyer": "Larger creators / personal brands",
+      "price_eur": 1490,
+      "price_band_min": 1390,
+      "price_band_max": 1490,
+      "price_floor_eur": 1290,
+      "status": "PROVISIONAL",
+      "delivery_days_min": 7,
+      "delivery_days_max": 12,
+      "deposit_percent": 50,
+      "revision_rounds": 2,
+      "support_days_after_launch": 30,
+      "includes": [
+        "Everything in Pro",
+        "Extra funnel/offer pages (up to 2)",
+        "2 revision rounds",
+        "Consulting pack credit (3× 45-min) or equivalent",
+        "Priority support 30 days",
+        "Optional EN+EL copy pass (lite)"
+      ],
+      "excludes": ["Guaranteed deals", "Community management"]
+    }
+  ],
+  "addons": [
+    { "id": "extra_funnel_pages", "name": "Extra offer / funnel pages", "price_eur": 150, "price_band_min": 120, "price_band_max": 200, "status": "PROVISIONAL" },
+    { "id": "multilingual", "name": "Multilingual (EN + EL)", "price_eur": 250, "price_band_min": 200, "price_band_max": 350, "status": "PROVISIONAL" },
+    { "id": "mini_admin", "name": "Creator mini-admin (request management)", "price_eur": 300, "price_band_min": 250, "price_band_max": 400, "status": "PROVISIONAL" },
+    { "id": "analytics_advanced", "name": "Advanced analytics setup", "price_eur": 120, "price_band_min": 90, "price_band_max": 180, "status": "PROVISIONAL" },
+    { "id": "dns_done_for_you", "name": "Custom domain + DNS done-for-you", "price_eur": 90, "price_band_min": 70, "price_band_max": 120, "status": "PROVISIONAL" },
+    { "id": "extra_revision", "name": "Extra revision round", "price_eur": 120, "price_band_min": 90, "price_band_max": 150, "status": "PROVISIONAL" },
+    { "id": "rush", "name": "Rush delivery (shorter SLA)", "price_eur": 300, "price_band_min": 250, "price_band_max": 400, "status": "PROVISIONAL", "note": "Premium — never discounted" },
+    { "id": "brand_lite", "name": "Brand visual upgrade (logo refresh lite)", "price_eur": 200, "price_band_min": 150, "price_band_max": 300, "status": "PROVISIONAL" },
+    { "id": "media_kit_premium", "name": "Media kit design premium", "price_eur": 180, "price_band_min": 140, "price_band_max": 250, "status": "PROVISIONAL" },
+    { "id": "quarterly_refresh", "name": "Quarterly refresh", "price_eur": 220, "price_band_min": 180, "price_band_max": 280, "status": "PROVISIONAL" },
+    { "id": "extra_training", "name": "Extra seat / training call", "price_eur": 90, "price_band_min": 70, "price_band_max": 120, "status": "PROVISIONAL" },
+    { "id": "booking_complexity", "name": "Booking complexity add-on", "price_eur": 300, "price_band_min": 300, "price_band_max": 300, "status": "LOCKED", "note": "Aligned to brand.json bookingAddOn" }
+  ],
+  "care_plans": [
+    {
+      "id": "care_basic",
+      "name": "Care Basic",
+      "price_eur_month": 49,
+      "price_band_min": 49,
+      "price_band_max": 69,
+      "edits_per_month": 3,
+      "includes": ["Small copy/image updates", "Light domain/uptime help", "Email support"],
+      "discount_rule": "Do not discount Care to close a kit — prefer kit concession once"
+    },
+    {
+      "id": "care_growth",
+      "name": "Care Growth",
+      "price_eur_month": 99,
+      "price_band_min": 79,
+      "price_band_max": 99,
+      "edits_per_month": 6,
+      "includes": ["Everything in Basic", "Priority support channel", "Monthly optimization note"],
+      "discount_rule": "List price; bundle only via BUNDLE code on kit+care 3+ months"
+    }
+  ],
+  "consulting": [
+    {
+      "id": "audit_discovery",
+      "name": "Discovery Audit",
+      "duration_min": 15,
+      "price_eur": 0,
+      "status": "PROVISIONAL",
+      "note": "Free for qualified ICP (default). Founder may switch to low-cost.",
+      "deliverable": "3 concrete blockers on paid-booking funnel",
+      "cancellation_hours": 24
+    },
+    {
+      "id": "strategy_45",
+      "name": "Strategy / packaging session",
+      "duration_min": 45,
+      "price_eur": 150,
+      "status": "LOCKED_PLACEHOLDER",
+      "note": "Matches OFFER_BEACHHEAD consulting €150/45m",
+      "deliverable": "Offer grid + pricing notes + funnel recommendations",
+      "cancellation_hours": 24
+    },
+    {
+      "id": "strategy_60",
+      "name": "Strategy Session 60 min",
+      "duration_min": 60,
+      "price_eur": 200,
+      "status": "PROVISIONAL",
+      "deliverable": "Deeper packaging + competitor/positioning notes",
+      "cancellation_hours": 24
+    },
+    {
+      "id": "consulting_pack_3",
+      "name": "Consulting pack (3× 45 min)",
+      "duration_min": 135,
+      "price_eur": 400,
+      "status": "PROVISIONAL",
+      "note": "Slight pack economics vs 3×150; use BUNDLE if attaching to kit",
+      "deliverable": "Three sessions across packaging / funnel / offer iteration",
+      "cancellation_hours": 24
+    }
+  ],
+  "discount_rules": [
+    { "code": "CASE_STUDY", "max_percent": 10, "alt": "OR free small add-on", "stackable": false, "requires_founder": false, "conditions": "Written public case study + quote + screens permission" },
+    { "code": "REFERRAL_PREPAY", "max_percent": 8, "stackable": false, "requires_founder": false, "conditions": "1 qualified peer intro OR 100% upfront — prefer upfront over stacking" },
+    { "code": "BUNDLE", "max_percent": 12, "stackable": false, "requires_founder": false, "conditions": "Kit + Care 3+ months OR Kit + consulting pack; don't heavily discount Care alone" },
+    { "code": "MULTI_SEAT", "max_percent": 15, "stackable": false, "requires_founder": true, "conditions": "Scoped seats clear for multi-creator org" },
+    { "code": "PILOT_BEACHHEAD", "max_percent": 15, "stackable": false, "requires_founder": true, "conditions": "Athens×influencers; slots_remaining > 0; time-boxed" },
+    { "code": "WINBACK", "max_percent": 0, "stackable": false, "requires_founder": false, "conditions": "Match prior quote once within 60 days — not a new % off" },
+    { "code": "PARTNER", "max_percent": 15, "stackable": false, "requires_founder": true, "conditions": "Written partner rate card" },
+    { "code": "SCOPE_TRADE", "max_percent": 0, "stackable": false, "requires_founder": false, "conditions": "Prefer reduced deliverables over pure %; document shrink" }
+  ],
+  "forbidden": [
+    "Free full kit (except internal demos)",
+    "Care free forever",
+    "Discount because they sound famous",
+    "Discount from fear of silence",
+    "Matching freelancer quotes without scope compare",
+    "Retro discount after start (unless our failure SLA)",
+    "Open coupon codes in cold outreach",
+    "Fake limited 50% off urgency in cold email",
+    "Discount + rush + extra scope together",
+    "Secret side deals not on proposal",
+    "Discount instead of qualifying out"
+  ],
+  "alternatives_to_discount_order": [
+    "Adjust scope (Starter instead of Pro)",
+    "Phased delivery",
+    "Remove add-ons",
+    "Longer timeline instead of lower price",
+    "Deposit structure change (sparingly; never 0%)",
+    "Controlled % off with reason code"
+  ],
+  "pipeline_discount_log_fields": [
+    "discount_code",
+    "percent",
+    "list_price",
+    "final_price",
+    "approved_by",
+    "date",
+    "notes"
+  ],
+  "niche_kit_skeleton": {
+    "note": "Clone per niche later — same tiers/addons/care/consulting shape; influencers is the template instance",
+    "name_pattern": "{Niche} Digital Kit"
+  }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Halloway Associates — Carte 85×55 mm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --lavender: #b8a9c4;
+      --cream: #f7f3eb;
+      --ink: #1a1a2e;
+      --pink: #e85a8c;
+      --lime: #c5e063;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Outfit, sans-serif;
+      background: #ddd;
+      color: var(--ink);
+      padding: 24px;
+    }
+    .hint { max-width: 420px; margin-bottom: 16px; font-size: 14px; }
+    .sheet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .card {
+      width: 85mm;
+      height: 55mm;
+      border: 2.5px solid var(--ink);
+      background: var(--cream);
+      padding: 6mm;
+      position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .card.front { background: var(--lavender); }
+    .portrait {
+      width: 14mm;
+      height: 14mm;
+      object-fit: cover;
+      border: 1.5px solid var(--ink);
+      display: block;
+      margin-bottom: 3mm;
+    }
+    .brand {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 16pt;
+      margin: 0;
+      line-height: 1.05;
+    }
+    .tag { font-size: 8pt; margin-top: 3mm; max-width: 48mm; }
+    .role { font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; margin-top: 6mm; }
+    .sticker {
+      position: absolute;
+      right: 5mm;
+      top: 5mm;
+      background: var(--pink);
+      color: #fff;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 6.5pt;
+      padding: 1.5mm 2mm;
+      border: 1.5px solid var(--ink);
+      transform: rotate(-3deg);
+    }
+    .back-grid {
+      display: grid;
+      grid-template-columns: 1fr 22mm;
+      gap: 3mm;
+      height: 100%;
+      align-items: center;
+    }
+    .meta { font-family: 'IBM Plex Mono', monospace; font-size: 6.5pt; line-height: 1.55; word-break: break-word; }
+    #qr { width: 20mm; height: 20mm; border: 1.5px solid var(--ink); }
+    @media print {
+      body { background: white; padding: 0; }
+      .hint, .no-print { display: none !important; }
+      .sheet { gap: 0; }
+      .card { margin: 0; box-shadow: none; }
+    }
+    @page { size: 85mm 55mm; margin: 0; }
+  </style>
+</head>
+<body>
+  <p class="hint no-print">
+    Identité canonique Halloway Associates. <strong>Ctrl+P → Enregistrer en PDF</strong>.
+    QR pointe vers <code>https://hallowayassociates.com/audit</code>.
+  </p>
+  <p class="no-print"><button onclick="window.print()">Imprimer / PDF</button></p>
+
+  <div class="sheet">
+    <article class="card front">
+      <span class="sticker">Réservable</span>
+      <img class="portrait" src="/images/founder.jpg" alt="" />
+      <h1 class="brand">Halloway Associates</h1>
+      <p class="tag">Votre entreprise, en ligne et réservable.</p>
+      <p class="role">Jadiss Elantaki · Founder<br />Grèce</p>
+    </article>
+
+    <article class="card back">
+      <div class="back-grid">
+        <div class="meta">
+          jadisselantaki@hallowayassociates.com<br />
+          hallowayassociates.com
+        </div>
+        <canvas id="qr" width="120" height="120"></canvas>
+      </div>
+    </article>
+  </div>
+
+  <script type="module">
+    import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode@1.5.4/+esm'
+    const target = 'https://hallowayassociates.com/audit'
+    await QRCode.toCanvas(document.getElementById('qr'), target, {
+      width: 120,
+      margin: 1,
+      color: { dark: '#1A1A2E', light: '#F7F3EB' },
+    })
+  </script>
+</body>
+</html>

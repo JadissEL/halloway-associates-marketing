@@ -1,0 +1,846 @@
+{
+    "updated":  "2026-10-31",
+    "outreachLive":  "locked",
+    "policy":  "official_api \u003e mcp \u003e controlled_crawler; scraping last resort; free-first",
+    "catalogCount":  90,
+    "doc":  "docs/INTEGRATIONS_CATALOG.md",
+    "accounts":  {
+                     "vercel":  {
+                                    "status":  "connected",
+                                    "free":  true,
+                                    "projectId":  "prj_MBjbCDnexhNtYdziZMUZL4qRExfh",
+                                    "layer":  1
+                                },
+                     "github":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "layer":  1
+                                },
+                     "neon":  {
+                                  "status":  "connected",
+                                  "free":  true,
+                                  "projectId":  "summer-river-76359085",
+                                  "env":  [
+                                              "DATABASE_URL"
+                                          ],
+                                  "layer":  1
+                              },
+                     "cloudflare":  {
+                                        "status":  "connected",
+                                        "free":  true,
+                                        "layer":  1,
+                                        "mcp":  "authenticated"
+                                    },
+                     "resend":  {
+                                    "status":  "connected",
+                                    "free":  true,
+                                    "env":  [
+                                                "RESEND_API_KEY",
+                                                "EMAIL_PROVIDER"
+                                            ],
+                                    "layer":  1,
+                                    "mcp":  "authenticated"
+                                },
+                     "calcom":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "env":  [
+                                                "VITE_CAL_URL"
+                                            ],
+                                    "layer":  1
+                                },
+                     "clerk":  {
+                                   "status":  "connected",
+                                   "free":  true,
+                                   "mcp":  "authenticated",
+                                   "layer":  1,
+                                   "application_id":  "app_3JCJAEhXxnZR51qzI3DTqVaN51D",
+                                   "name":  "HallowayAsoociates",
+                                   "env":  [
+                                               "VITE_CLERK_PUBLISHABLE_KEY"
+                                           ],
+                                   "social":  {
+                                                  "google":  true,
+                                                  "linkedin":  true,
+                                                  "linkedin_oidc":  false
+                                              }
+                               },
+                     "sentry":  {
+                                    "status":  "connected",
+                                    "free":  true,
+                                    "env":  [
+                                                "SENTRY_DSN",
+                                                "VITE_SENTRY_DSN"
+                                            ],
+                                    "layer":  1,
+                                    "mcp":  "authenticated"
+                                },
+                     "registrar":  {
+                                       "status":  "signup",
+                                       "free":  "domain_fee",
+                                       "layer":  1
+                                   },
+                     "uptimerobot":  {
+                                         "status":  "signup",
+                                         "free":  true,
+                                         "layer":  1
+                                     },
+                     "google_search_console":  {
+                                                   "status":  "signup",
+                                                   "free":  true,
+                                                   "layer":  1
+                                               },
+                     "ga4":  {
+                                 "status":  "signup",
+                                 "free":  true,
+                                 "env":  [
+                                             "VITE_GA_MEASUREMENT_ID"
+                                         ],
+                                 "layer":  1
+                             },
+                     "umami":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "layer":  1
+                               },
+                     "plausible":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "env":  [
+                                                   "VITE_PLAUSIBLE_DOMAIN"
+                                               ],
+                                       "layer":  1
+                                   },
+                     "google_business_profile":  {
+                                                     "status":  "signup",
+                                                     "free":  true,
+                                                     "layer":  1
+                                                 },
+                     "github_actions":  {
+                                            "status":  "signup",
+                                            "free":  true,
+                                            "layer":  1
+                                        },
+                     "letsencrypt":  {
+                                         "status":  "connected",
+                                         "free":  true,
+                                         "via":  "vercel_cloudflare",
+                                         "layer":  1
+                                     },
+                     "render":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "workspaceId":  "tea-d2th083uibrs73epvpl0",
+                                    "layer":  2
+                                },
+                     "flyio":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "layer":  2
+                               },
+                     "upstash":  {
+                                     "status":  "stubbed",
+                                     "free":  true,
+                                     "workaround":  "SYNC_JOBS=true",
+                                     "env":  [
+                                                 "REDIS_URL"
+                                             ],
+                                     "layer":  2
+                                 },
+                     "stripe":  {
+                                    "status":  "stubbed",
+                                    "free":  "test_mode",
+                                    "mcp":  "authenticated",
+                                    "env":  [
+                                                "STRIPE_SECRET_KEY",
+                                                "STRIPE_PUBLISHABLE_KEY",
+                                                "VITE_STRIPE_PK"
+                                            ],
+                                    "layer":  2
+                                },
+                     "paypal":  {
+                                    "status":  "stubbed",
+                                    "free":  true,
+                                    "env":  [
+                                                "PAYPAL_CLIENT_ID",
+                                                "PAYPAL_CLIENT_SECRET"
+                                            ],
+                                    "layer":  2
+                                },
+                     "openai":  {
+                                    "status":  "stubbed",
+                                    "free":  false,
+                                    "env":  [
+                                                "OPENAI_API_KEY"
+                                            ],
+                                    "layer":  2
+                                },
+                     "google_places":  {
+                                           "status":  "stubbed",
+                                           "free":  "credits",
+                                           "env":  [
+                                                       "GOOGLE_PLACES_API_KEY"
+                                                   ],
+                                           "layer":  2
+                                       },
+                     "mapbox":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "env":  [
+                                                "VITE_MAPBOX_TOKEN"
+                                            ],
+                                    "layer":  2
+                                },
+                     "hunter":  {
+                                    "status":  "stubbed",
+                                    "free":  "limited",
+                                    "env":  [
+                                                "HUNTER_API_KEY"
+                                            ],
+                                    "layer":  2
+                                },
+                     "apollo":  {
+                                    "status":  "connected",
+                                    "free":  "limited",
+                                    "env":  [
+                                                "APOLLO_API_KEY"
+                                            ],
+                                    "layer":  2,
+                                    "mcp":  "authenticated"
+                                },
+                     "formspree":  {
+                                       "status":  "stubbed",
+                                       "free":  true,
+                                       "env":  [
+                                                   "VITE_FORMSPREE_ID"
+                                               ],
+                                       "layer":  2
+                                   },
+                     "tally":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "env":  [
+                                               "VITE_TALLY_URL"
+                                           ],
+                                   "layer":  2
+                               },
+                     "fillout":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "slack":  {
+                                   "status":  "connected",
+                                   "free":  true,
+                                   "env":  [
+                                               "SLACK_WEBHOOK_URL"
+                                           ],
+                                   "layer":  2,
+                                   "mcp":  "authenticated"
+                               },
+                     "discord":  {
+                                     "status":  "stubbed",
+                                     "free":  true,
+                                     "env":  [
+                                                 "DISCORD_WEBHOOK_URL"
+                                             ],
+                                     "layer":  2
+                                 },
+                     "telegram":  {
+                                      "status":  "stubbed",
+                                      "free":  true,
+                                      "env":  [
+                                                  "TELEGRAM_BOT_TOKEN",
+                                                  "TELEGRAM_CHAT_ID"
+                                              ],
+                                      "layer":  2
+                                  },
+                     "betterstack":  {
+                                         "status":  "signup",
+                                         "free":  true,
+                                         "layer":  2
+                                     },
+                     "posthog":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "env":  [
+                                                 "VITE_POSTHOG_KEY"
+                                             ],
+                                     "layer":  2
+                                 },
+                     "microsoft_clarity":  {
+                                               "status":  "signup",
+                                               "free":  true,
+                                               "layer":  2
+                                           },
+                     "gtm":  {
+                                 "status":  "signup",
+                                 "free":  true,
+                                 "env":  [
+                                             "VITE_GTM_ID"
+                                         ],
+                                 "layer":  2
+                             },
+                     "meta_pixel":  {
+                                        "status":  "signup",
+                                        "free":  true,
+                                        "env":  [
+                                                    "VITE_META_PIXEL_ID"
+                                                ],
+                                        "layer":  2
+                                    },
+                     "linkedin_insight":  {
+                                              "status":  "signup",
+                                              "free":  true,
+                                              "env":  [
+                                                          "VITE_LI_PARTNER_ID"
+                                                      ],
+                                              "layer":  2
+                                          },
+                     "brevo":  {
+                                   "status":  "stubbed",
+                                   "free":  true,
+                                   "env":  [
+                                               "BREVO_API_KEY"
+                                           ],
+                                   "layer":  2
+                               },
+                     "loops":  {
+                                   "status":  "stubbed",
+                                   "free":  true,
+                                   "env":  [
+                                               "LOOPS_API_KEY"
+                                           ],
+                                   "layer":  2
+                               },
+                     "notion":  {
+                                    "status":  "connected",
+                                    "free":  true,
+                                    "env":  [
+                                                "NOTION_TOKEN"
+                                            ],
+                                    "layer":  2,
+                                    "mcp":  "authenticated"
+                                },
+                     "linear":  {
+                                    "status":  "connected",
+                                    "free":  true,
+                                    "env":  [
+                                                "LINEAR_API_KEY"
+                                            ],
+                                    "layer":  2,
+                                    "mcp":  "authenticated"
+                                },
+                     "airtable":  {
+                                      "status":  "signup",
+                                      "free":  true,
+                                      "env":  [
+                                                  "AIRTABLE_API_KEY",
+                                                  "AIRTABLE_BASE_ID"
+                                              ],
+                                      "layer":  2
+                                  },
+                     "google_sheets":  {
+                                           "status":  "connected",
+                                           "free":  true,
+                                           "layer":  2,
+                                           "mcp":  "authenticated"
+                                       },
+                     "hubspot":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "env":  [
+                                                 "HUBSPOT_TOKEN"
+                                             ],
+                                     "layer":  2
+                                 },
+                     "n8n":  {
+                                 "status":  "signup",
+                                 "free":  "self_host",
+                                 "layer":  2
+                             },
+                     "make":  {
+                                  "status":  "signup",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "zapier":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "layer":  2
+                                },
+                     "pipedream":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "crisp":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "layer":  2
+                               },
+                     "tawk":  {
+                                  "status":  "signup",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "loom":  {
+                                  "status":  "manual",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "zoom":  {
+                                  "status":  "signup",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "google_meet":  {
+                                         "status":  "signup",
+                                         "free":  true,
+                                         "layer":  2
+                                     },
+                     "calendly":  {
+                                      "status":  "signup",
+                                      "free":  true,
+                                      "env":  [
+                                                  "VITE_CALENDLY_URL"
+                                              ],
+                                      "layer":  2
+                                  },
+                     "cloudinary":  {
+                                        "status":  "signup",
+                                        "free":  true,
+                                        "env":  [
+                                                    "CLOUDINARY_URL"
+                                                ],
+                                        "layer":  2
+                                    },
+                     "uploadcare":  {
+                                        "status":  "signup",
+                                        "free":  true,
+                                        "env":  [
+                                                    "UPLOADCARE_PUBLIC_KEY"
+                                                ],
+                                        "layer":  2
+                                    },
+                     "sanity":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "env":  [
+                                                "SANITY_PROJECT_ID",
+                                                "SANITY_DATASET"
+                                            ],
+                                    "layer":  2
+                                },
+                     "baserow":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "nocodb":  {
+                                    "status":  "signup",
+                                    "free":  "self_host",
+                                    "layer":  2
+                                },
+                     "unsplash":  {
+                                      "status":  "signup",
+                                      "free":  true,
+                                      "env":  [
+                                                  "UNSPLASH_ACCESS_KEY"
+                                              ],
+                                      "layer":  2
+                                  },
+                     "pexels":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "layer":  2
+                                },
+                     "brandfetch":  {
+                                        "status":  "signup",
+                                        "free":  true,
+                                        "env":  [
+                                                    "BRANDFETCH_API_KEY"
+                                                ],
+                                        "layer":  2
+                                    },
+                     "logodev":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "figma":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "layer":  2
+                               },
+                     "canva":  {
+                                   "status":  "connected",
+                                   "free":  true,
+                                   "layer":  2,
+                                   "mcp":  "authenticated"
+                               },
+                     "buffer":  {
+                                    "status":  "signup",
+                                    "free":  true,
+                                    "layer":  2
+                                },
+                     "postiz":  {
+                                    "status":  "connected",
+                                    "free":  true,
+                                    "layer":  2,
+                                    "mcp":  "authenticated"
+                                },
+                     "google_postmaster":  {
+                                               "status":  "signup",
+                                               "free":  true,
+                                               "layer":  2
+                                           },
+                     "mxtoolbox":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "bing_webmaster":  {
+                                            "status":  "signup",
+                                            "free":  true,
+                                            "layer":  2
+                                        },
+                     "pagespeed":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "lighthouse_ci":  {
+                                           "status":  "signup",
+                                           "free":  true,
+                                           "layer":  2
+                                       },
+                     "playwright":  {
+                                        "status":  "connected",
+                                        "free":  true,
+                                        "layer":  2
+                                    },
+                     "doppler":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "infisical":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "bitwarden":  {
+                                       "status":  "manual",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "tailscale":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "cloudflare_tunnel":  {
+                                               "status":  "signup",
+                                               "free":  true,
+                                               "layer":  2
+                                           },
+                     "ngrok":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "env":  [
+                                               "NGROK_AUTHTOKEN"
+                                           ],
+                                   "layer":  2
+                               },
+                     "wave":  {
+                                  "status":  "signup",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "wise":  {
+                                  "status":  "manual",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "docusign":  {
+                                      "status":  "signup",
+                                      "free":  "limited",
+                                      "layer":  2
+                                  },
+                     "dropbox_sign":  {
+                                          "status":  "signup",
+                                          "free":  "limited",
+                                          "layer":  2
+                                      },
+                     "tavily":  {
+                                    "status":  "connected",
+                                    "free":  "credits",
+                                    "env":  [
+                                                "TAVILY_API_KEY"
+                                            ],
+                                    "layer":  2,
+                                    "mcp":  "authenticated"
+                                },
+                     "context7":  {
+                                      "status":  "connected",
+                                      "free":  true,
+                                      "layer":  2
+                                  },
+                     "serpapi":  {
+                                     "status":  "stubbed",
+                                     "free":  "credits",
+                                     "env":  [
+                                                 "SERPAPI_KEY"
+                                             ],
+                                     "layer":  2
+                                 },
+                     "dropcontact":  {
+                                         "status":  "stubbed",
+                                         "free":  "trial",
+                                         "env":  [
+                                                     "DROPCONTACT_API_KEY"
+                                                 ],
+                                         "layer":  2
+                                     },
+                     "kaspr":  {
+                                   "status":  "stubbed",
+                                   "free":  "trial",
+                                   "layer":  2
+                               },
+                     "algolia":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "meilisearch":  {
+                                         "status":  "signup",
+                                         "free":  "self_host",
+                                         "layer":  2
+                                     },
+                     "highlight":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "layer":  2
+                                   },
+                     "axiom":  {
+                                   "status":  "signup",
+                                   "free":  true,
+                                   "layer":  2
+                               },
+                     "grafana_cloud":  {
+                                           "status":  "signup",
+                                           "free":  true,
+                                           "layer":  2
+                                       },
+                     "turnstile":  {
+                                       "status":  "signup",
+                                       "free":  true,
+                                       "env":  [
+                                                   "VITE_TURNSTILE_SITE_KEY",
+                                                   "TURNSTILE_SECRET_KEY"
+                                               ],
+                                       "layer":  2
+                                   },
+                     "hcaptcha":  {
+                                      "status":  "signup",
+                                      "free":  true,
+                                      "layer":  2
+                                  },
+                     "iubenda":  {
+                                     "status":  "signup",
+                                     "free":  "limited",
+                                     "layer":  2
+                                 },
+                     "termly":  {
+                                    "status":  "manual",
+                                    "free":  "draft",
+                                    "layer":  2
+                                },
+                     "hibp":  {
+                                  "status":  "signup",
+                                  "free":  true,
+                                  "layer":  2
+                              },
+                     "ssllabs":  {
+                                     "status":  "manual",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "indexnow":  {
+                                      "status":  "signup",
+                                      "free":  true,
+                                      "layer":  2
+                                  },
+                     "beehiiv":  {
+                                     "status":  "signup",
+                                     "free":  true,
+                                     "layer":  2
+                                 },
+                     "convertkit":  {
+                                        "status":  "signup",
+                                        "free":  true,
+                                        "layer":  2
+                                    },
+                     "instantly":  {
+                                       "status":  "locked",
+                                       "free":  false,
+                                       "layer":  3
+                                   },
+                     "smartlead":  {
+                                       "status":  "locked",
+                                       "free":  false,
+                                       "layer":  3
+                                   },
+                     "lemlist":  {
+                                     "status":  "locked",
+                                     "free":  false,
+                                     "layer":  3
+                                 },
+                     "ses":  {
+                                 "status":  "locked",
+                                 "free":  false,
+                                 "layer":  3
+                             },
+                     "postmark":  {
+                                      "status":  "locked",
+                                      "free":  false,
+                                      "layer":  3
+                                  },
+                     "clay":  {
+                                  "status":  "locked",
+                                  "free":  false,
+                                  "layer":  3
+                              },
+                     "clearbit":  {
+                                      "status":  "locked",
+                                      "free":  false,
+                                      "layer":  3
+                                  },
+                     "pdl":  {
+                                 "status":  "locked",
+                                 "free":  false,
+                                 "layer":  3
+                             },
+                     "mailwarm":  {
+                                      "status":  "locked",
+                                      "free":  false,
+                                      "layer":  3
+                                  },
+                     "anthropic":  {
+                                       "status":  "n/a-free",
+                                       "free":  false,
+                                       "layer":  3
+                                   },
+                     "openrouter":  {
+                                        "status":  "n/a-free",
+                                        "free":  false,
+                                        "layer":  3
+                                    },
+                     "whisper":  {
+                                     "status":  "locked",
+                                     "free":  false,
+                                     "layer":  3
+                                 },
+                     "deepgram":  {
+                                      "status":  "locked",
+                                      "free":  false,
+                                      "layer":  3
+                                  },
+                     "customerio":  {
+                                        "status":  "locked",
+                                        "free":  false,
+                                        "layer":  3
+                                    },
+                     "intercom":  {
+                                      "status":  "locked",
+                                      "free":  false,
+                                      "layer":  3
+                                  },
+                     "softone":  {
+                                     "status":  "signup",
+                                     "free":  false,
+                                     "layer":  3
+                                 },
+                     "aade_vat":  {
+                                      "status":  "manual",
+                                      "free":  false,
+                                      "layer":  3
+                                  },
+                     "apify":  {
+                                   "status":  "locked",
+                                   "free":  false,
+                                   "layer":  4,
+                                   "policy":  "research_only"
+                               },
+                     "brightdata":  {
+                                        "status":  "locked",
+                                        "free":  false,
+                                        "layer":  4,
+                                        "policy":  "research_only"
+                                    },
+                     "phantombuster":  {
+                                           "status":  "locked",
+                                           "free":  false,
+                                           "layer":  4
+                                       },
+                     "expandi":  {
+                                     "status":  "locked",
+                                     "free":  false,
+                                     "layer":  4
+                                 },
+                     "waalaxy":  {
+                                     "status":  "locked",
+                                     "free":  false,
+                                     "layer":  4
+                                 },
+                     "captcha_farms":  {
+                                           "status":  "locked",
+                                           "free":  false,
+                                           "layer":  4,
+                                           "policy":  "forbidden"
+                                       },
+                     "inbox_scrape":  {
+                                          "status":  "locked",
+                                          "free":  false,
+                                          "layer":  4,
+                                          "policy":  "forbidden"
+                                      },
+                     "gmail":  {
+                                   "status":  "connected",
+                                   "mcp":  "authenticated",
+                                   "free":  true,
+                                   "layer":  2
+                               },
+                     "google_calendar":  {
+                                             "status":  "connected",
+                                             "mcp":  "authenticated",
+                                             "free":  true,
+                                             "layer":  2
+                                         },
+                     "google_drive":  {
+                                          "status":  "connected",
+                                          "mcp":  "authenticated",
+                                          "free":  true,
+                                          "layer":  2
+                                      },
+                     "google_docs":  {
+                                         "status":  "connected",
+                                         "mcp":  "authenticated",
+                                         "free":  true,
+                                         "layer":  2
+                                     },
+                     "prisma":  {
+                                    "status":  "connected",
+                                    "mcp":  "authenticated",
+                                    "free":  true,
+                                    "layer":  2
+                                },
+                     "granola":  {
+                                     "status":  "connected",
+                                     "mcp":  "authenticated",
+                                     "free":  true,
+                                     "layer":  2
+                                 }
+                 }
+}

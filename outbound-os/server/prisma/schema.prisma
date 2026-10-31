@@ -1,0 +1,324 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CampaignStatus {
+  draft
+  running
+  paused
+  completed
+}
+
+enum CampaignChannel {
+  email
+}
+
+enum LeadStatus {
+  new
+  enriched
+  queued
+  contacted
+  replied
+  hot
+  unsubscribed
+  bounced
+  archived
+}
+
+enum CampaignLeadStatus {
+  pending
+  queued
+  sent
+  replied
+  bounced
+  unsubscribed
+  failed
+  skipped
+}
+
+enum OutboxStatus {
+  scheduled
+  sending
+  sent
+  failed
+  cancelled
+  dry_run_sent
+}
+
+enum ReplyClassification {
+  interested
+  question
+  not_interested
+  unsubscribe
+  bounce
+  ooo
+  unknown
+}
+
+enum PipelineStage {
+  new_reply
+  hot
+  audit_booked
+  proposal_sent
+  won
+  lost
+}
+
+enum SuppressionType {
+  email
+  domain
+  phone
+}
+
+enum MailboxProvider {
+  dry_run
+  resend
+  smtp
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  auditLogs    AuditLog[]
+}
+
+model WorkspaceSettings {
+  id                       String   @id @default(cuid())
+  brand                    String   @default("Halloway Associates")
+  founderName              String   @default("{{FOUNDER_NAME}}")
+  contactEmail             String   @default("{{EMAIL}}")
+  contactPhone             String   @default("{{PHONE}}")
+  defaultCity              String   @default("{{CITY}}")
+  dryRun                   Boolean  @default(true)
+  warmUpMode               Boolean  @default(true)
+  maxEmailsPerDay          Int      @default(40)
+  requireWebsite           Boolean  @default(false)
+  excludeFreeEmailDomains  Boolean  @default(false)
+  openaiConfigured         Boolean  @default(false)
+  resendConfigured         Boolean  @default(false)
+  smtpConfigured           Boolean  @default(false)
+  googlePlacesConfigured   Boolean  @default(false)
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+}
+
+model Mailbox {
+  id         String          @id @default(cuid())
+  fromName   String
+  fromEmail  String          @unique
+  provider   MailboxProvider @default(dry_run)
+  dailyCap   Int             @default(40)
+  warmUp     Boolean         @default(true)
+  active     Boolean         @default(true)
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+  campaigns  Campaign[]
+  outbox     OutboxMessage[]
+}
+
+model Lead {
+  id               String         @id @default(cuid())
+  businessName     String
+  niche            String
+  city             String
+  website          String?
+  email            String?
+  phone            String?
+  instagram        String?
+  googleMapsUrl    String?
+  source           String         @default("manual")
+  collectedAt      DateTime       @default(now())
+  publicListingUrl String?
+  status           LeadStatus     @default(new)
+  enrichmentJson   Json?
+  notes            String?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  campaignLeads    CampaignLead[]
+  replies          Reply[]
+  pipelineItems    PipelineItem[]
+
+  @@index([niche, city])
+  @@index([email])
+  @@index([status])
+}
+
+model Sequence {
+  id          String         @id @default(cuid())
+  name        String
+  niche       String
+  locale      String         @default("fr")
+  description String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  steps       SequenceStep[]
+  campaigns   Campaign[]
+}
+
+model SequenceStep {
+  id              String   @id @default(cuid())
+  sequenceId      String
+  order           Int
+  delayDays       Int      @default(0)
+  subjectTemplate String
+  bodyTemplate    String
+  subjectB        String?
+  channel         String   @default("email")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  sequence        Sequence @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
+  outbox          OutboxMessage[]
+
+  @@unique([sequenceId, order])
+}
+
+model Campaign {
+  id          String           @id @default(cuid())
+  name        String
+  niche       String
+  city        String
+  status      CampaignStatus   @default(draft)
+  channel     CampaignChannel  @default(email)
+  dailyLimit  Int              @default(20)
+  startAt     DateTime?
+  mailboxId   String
+  sequenceId  String
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  mailbox     Mailbox          @relation(fields: [mailboxId], references: [id])
+  sequence    Sequence         @relation(fields: [sequenceId], references: [id])
+  leads       CampaignLead[]
+  outbox      OutboxMessage[]
+  auditLogs   AuditLog[]
+
+  @@index([status])
+}
+
+model CampaignLead {
+  id              String             @id @default(cuid())
+  campaignId      String
+  leadId          String
+  status          CampaignLeadStatus @default(pending)
+  currentStep     Int                @default(0)
+  lastSentAt      DateTime?
+  nextScheduledAt DateTime?
+  personalizedJson Json?
+  error           String?
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  campaign        Campaign           @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  lead            Lead               @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  outbox          OutboxMessage[]
+  replies         Reply[]
+
+  @@unique([campaignId, leadId])
+  @@index([status])
+}
+
+model OutboxMessage {
+  id             String       @id @default(cuid())
+  campaignId     String
+  campaignLeadId String
+  mailboxId      String
+  stepId         String
+  toEmail        String
+  subject        String
+  bodyHtml       String
+  bodyText       String
+  scheduledAt    DateTime
+  sentAt         DateTime?
+  providerId     String?
+  status         OutboxStatus @default(scheduled)
+  error          String?
+  attemptCount   Int          @default(0)
+  idempotencyKey String       @unique
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  campaign       Campaign     @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  campaignLead   CampaignLead @relation(fields: [campaignLeadId], references: [id], onDelete: Cascade)
+  mailbox        Mailbox      @relation(fields: [mailboxId], references: [id])
+  step           SequenceStep @relation(fields: [stepId], references: [id])
+  replies        Reply[]
+
+  @@index([status, scheduledAt])
+  @@index([mailboxId, sentAt])
+}
+
+model Reply {
+  id               String              @id @default(cuid())
+  leadId           String?
+  campaignLeadId   String?
+  outboxMessageId  String?
+  rawText          String
+  classification   ReplyClassification @default(unknown)
+  confidence       Float               @default(0)
+  handled          Boolean             @default(false)
+  suggestedReply   String?
+  source           String              @default("manual")
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  lead             Lead?               @relation(fields: [leadId], references: [id])
+  campaignLead     CampaignLead?       @relation(fields: [campaignLeadId], references: [id])
+  outboxMessage    OutboxMessage?      @relation(fields: [outboxMessageId], references: [id])
+  pipelineItem     PipelineItem?
+}
+
+model PipelineItem {
+  id            String        @id @default(cuid())
+  leadId        String
+  replyId       String?       @unique
+  stage         PipelineStage @default(new_reply)
+  notes         String?
+  nextActionAt  DateTime?
+  suggestedReply String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  lead          Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  reply         Reply?        @relation(fields: [replyId], references: [id])
+
+  @@index([stage])
+}
+
+model Suppression {
+  id        String          @id @default(cuid())
+  type      SuppressionType
+  value     String
+  reason    String?
+  createdAt DateTime        @default(now())
+
+  @@unique([type, value])
+  @@index([value])
+}
+
+model AuditLog {
+  id         String    @id @default(cuid())
+  actorId    String?
+  actorEmail String?
+  action     String
+  meta       Json?
+  campaignId String?
+  createdAt  DateTime  @default(now())
+  actor      User?     @relation(fields: [actorId], references: [id])
+  campaign   Campaign? @relation(fields: [campaignId], references: [id])
+
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  type      String
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  meta      Json?
+  createdAt DateTime @default(now())
+}

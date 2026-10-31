@@ -1,0 +1,32 @@
+{
+  "name": "localpresence-outbound-os",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Halloway Associates Outbound OS — autonomous B2B outreach for SMB digital presence",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "dev:server": "npm run dev -w server",
+    "dev:all": "concurrently -n web,api,worker -c cyan,magenta,yellow \"npm run dev -w web\" \"npm run dev -w server\" \"npm run worker -w server\"",
+    "worker": "npm run worker -w server",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "npm run db:migrate -w server",
+    "db:seed": "npm run db:seed -w server",
+    "db:reset": "npm run db:reset -w server",
+    "build": "npm run build -w server && npm run build -w web",
+    "test": "npm run test -w server",
+    "test:e2e": "npm run test:e2e -w web",
+    "lint": "npm run lint -w server && npm run lint -w web",
+    "setup": "npm install && npm run db:up && node scripts/wait-for-db.mjs && npm run db:migrate && npm run db:seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

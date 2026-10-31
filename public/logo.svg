@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Halloway Associates">
+  <rect width="64" height="64" fill="#F7F3EB"/>
+  <rect x="4" y="4" width="56" height="56" stroke="#1A1A2E" stroke-width="3" fill="none"/>
+  <path d="M18 42 V22 H28 C33.5 22 37 25.2 37 30.2 C37 35.2 33.5 38.5 28 38.5 H22 V42 H18Z M22 34.5 H27.5 C30.2 34.5 32 32.8 32 30.2 C32 27.6 30.2 26 27.5 26 H22 V34.5Z" fill="#1A1A2E"/>
+  <circle cx="46" cy="24" r="6" fill="#E85A8C"/>
+  <circle cx="46" cy="40" r="6" fill="#C5E063"/>
+</svg>

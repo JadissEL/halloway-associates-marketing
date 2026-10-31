@@ -1,0 +1,23 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.vercel
+.cursor/
+.cursor_memory/
+*.local
+
+# Permanent local secrets vault (never commit)
+.secrets/*
+!.secrets/README.md
+outbound-os/.env
+outbound-os/server/.env
+outbound-os/web/.env
+outbound-os/.env.*
+!outbound-os/.env.example
+outbound-os/web/.vscode/

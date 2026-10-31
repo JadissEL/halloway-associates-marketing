@@ -1,0 +1,167 @@
+.lp-photo {
+  margin: 0;
+  overflow: hidden;
+  border: var(--lp-border);
+  background: var(--lp-cream-dark);
+  box-shadow: var(--shadow-block);
+}
+
+.lp-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lp-photo--flush {
+  border: none;
+  box-shadow: none;
+  border-bottom: var(--lp-border);
+}
+
+.lp-portrait {
+  margin: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 0;
+  overflow: hidden;
+  border: 2px solid var(--lp-ink);
+  flex-shrink: 0;
+}
+
+.lp-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: var(--lp-border-thin);
+  background: var(--lp-cream);
+  color: var(--lp-ink);
+}
+
+.niche-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.niche-card__body {
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.niche-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.case-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: grid;
+}
+
+.case-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: var(--lp-border);
+}
+
+.case-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-card__body {
+  padding: 1.25rem 1.35rem 1.5rem;
+}
+
+.case-card__person {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-photo-row {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .about-photo-row {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+.demo-hero-photo {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  border-bottom: var(--lp-border);
+}
+
+.demo-hero-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.demo-hero-photo__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(247, 243, 235, 0.92) 0%, rgba(247, 243, 235, 0.55) 45%, rgba(247, 243, 235, 0.15) 100%);
+}
+
+.demo-hero-photo__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.25rem;
+}
+
+.demo-hero-photo__inner {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .demo-hero-photo {
+    min-height: 420px;
+  }
+  .demo-hero-photo img {
+    min-height: 420px;
+  }
+  .demo-hero-photo__inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+}
+
+.home-hero__visual .lp-photo {
+  height: 100%;
+  min-height: 320px;
+}
+
+@media (min-width: 1024px) {
+  .home-hero__visual .lp-photo {
+    min-height: 480px;
+  }
+}

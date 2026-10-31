@@ -1,0 +1,49 @@
+:root {
+  /* Quaffable-inspired modular studio palette — adapted for Halloway Associates */
+  --lp-lavender: #b8a9c4;
+  --lp-lavender-deep: #9e8eb0;
+  --lp-lavender-soft: #cdc2d6;
+  --lp-cream: #f7f3eb;
+  --lp-cream-dark: #ebe4d8;
+  --lp-ink: #1a1a2e;
+  --lp-ink-soft: #2e2e44;
+  --lp-pink: #e85a8c;
+  --lp-lime: #c5e063;
+  --lp-violet: #6b4ce6;
+  --lp-white: #fffcf7;
+  --lp-muted: #5c5a6e;
+
+  --lp-border: 3px solid var(--lp-ink);
+  --lp-border-thin: 1.5px solid var(--lp-ink);
+  --lp-radius: 0;
+  --lp-gap: 1.25rem;
+
+  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.05rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: clamp(2.4rem, 4vw, 3.5rem);
+  --text-hero: clamp(3rem, 7vw, 5.5rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4.5rem;
+  --space-12: 6rem;
+
+  --shadow-block: 4px 4px 0 var(--lp-ink);
+  --max-w: 1180px;
+  --header-h: 72px;
+
+  color-scheme: light;
+}
