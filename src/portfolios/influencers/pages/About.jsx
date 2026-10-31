@@ -13,26 +13,31 @@ export default function InfluencerAbout() {
         <img
           src={creator.portrait}
           alt=""
-          style={{ width: '100%', border: '2px solid var(--inf-ink)', objectFit: 'cover', aspectRatio: '4/5' }}
+          className="inf-about__photo"
         />
         <div>
-          <p>{creator.bio}</p>
+          <p>{creator.aboutLong || creator.bio}</p>
           <p>
-            <strong>Based:</strong> {creator.location}
+            Based in {creator.location}. You can find me as {creator.handle} on the usual platforms.
           </p>
-          <p>
-            <strong>Handle:</strong> {creator.handle}
-          </p>
+          <ul className="inf-platform-row inf-platform-row--stack">
+            {creator.platforms.map((p) => (
+              <li key={p.id}>
+                <strong>{p.label}</strong>
+                <span>{p.detail}</span>
+              </li>
+            ))}
+          </ul>
           <div className="inf-actions">
             <Link className="inf-btn inf-btn--lime" to="/portfolios/influencers/connect">
-              Connect with email
+              Say hi
             </Link>
             <Link className="inf-btn inf-btn--ghost" to="/portfolios/influencers/offers">
-              See offers
+              See how we can work
             </Link>
           </div>
           <p className="inf-label" style={{ marginTop: '2rem' }}>
-            Site kit by {kitMeta.studio}
+            Site by {kitMeta.studio}
           </p>
         </div>
       </div>

@@ -34,14 +34,14 @@ export default function InfluencerConnect() {
 
   return (
     <main className="inf-wrap inf-section">
-      <p className="inf-label">Account</p>
+      <p className="inf-label">Welcome</p>
       <h1 className="display" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', margin: 0 }}>
-        Connect to book &amp; message
+        Let’s get you set up
       </h1>
       <p style={{ maxWidth: '52ch', color: 'var(--inf-muted)' }}>
-        Clients connect with <strong>Gmail</strong> or <strong>LinkedIn</strong> (Clerk)
-        {clerkOn ? '' : ' — add VITE_CLERK_PUBLISHABLE_KEY to enable'}
-        , or use email below. Required before contact or booking.
+        {clerkOn
+          ? 'Sign in with Google or LinkedIn, or just leave your name and email. You’ll need this before messaging or booking.'
+          : 'Leave your name and email — you’ll need this before messaging or booking.'}
       </p>
 
       <div className="inf-grid inf-grid--2" style={{ marginTop: '1.75rem', alignItems: 'start' }}>
@@ -49,20 +49,18 @@ export default function InfluencerConnect() {
           <SocialConnect nextPath={next.startsWith('/') ? next : '/portfolios/influencers/account'} />
         ) : (
           <div className="inf-card">
-            <p className="inf-label">Clerk (Gmail + LinkedIn)</p>
+            <p className="inf-label">Google / LinkedIn</p>
             <h2 className="display" style={{ fontSize: '1.25rem' }}>
-              Not configured yet
+              Coming soon on this demo
             </h2>
             <p style={{ color: 'var(--inf-muted)' }}>
-              Set <code>VITE_CLERK_PUBLISHABLE_KEY</code> in <code>.env</code>, then enable Google and
-              LinkedIn in the Clerk Dashboard. See{' '}
-              <code>docs/CLERK_INFLUENCER_AUTH.md</code>.
+              Use the email form for now — one-tap social sign-in lights up when Clerk is configured.
             </p>
           </div>
         )}
 
         <form className="inf-form inf-card" onSubmit={onSubmit}>
-          <p className="inf-label">Email connect (always available)</p>
+          <p className="inf-label">With email</p>
           {error ? (
             <p className="inf-banner" style={{ background: 'rgba(232,90,140,0.2)' }}>
               {error}
@@ -85,10 +83,10 @@ export default function InfluencerConnect() {
             </select>
           </label>
           <button className="inf-btn inf-btn--lime" type="submit">
-            {existing ? 'Update & continue' : 'Connect with email'}
+            {existing ? 'Save & continue' : 'Continue'}
           </button>
           <p style={{ fontSize: '0.85rem', color: 'var(--inf-muted)' }}>
-            Creator? <Link to="/portfolios/influencers/creator/login">Creator dashboard login</Link>
+            Are you the creator? <Link to="/portfolios/influencers/creator/login">Sign in here</Link>
           </p>
         </form>
       </div>

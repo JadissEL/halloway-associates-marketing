@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { offers } from '../data'
+import { creator, offers } from '../data'
 
 export default function InfluencerSuccess() {
   const [params] = useSearchParams()
@@ -9,35 +9,36 @@ export default function InfluencerSuccess() {
   return (
     <main className="inf-wrap inf-section">
       <div className="inf-banner inf-banner--ok" style={{ maxWidth: 560 }}>
-        <p className="inf-label">Confirmed · demo checkout</p>
+        <p className="inf-label">You’re in</p>
         <h1 className="display" style={{ fontSize: '2rem', margin: '0.25rem 0 0.75rem' }}>
-          Request received
+          Thanks — I got your request
         </h1>
         <p>
           {offer ? (
             <>
-              Offer: <strong>{offer.name}</strong>.{' '}
+              <strong>{offer.name}</strong>
+              {' · '}
             </>
           ) : null}
-          Ref: <code>{ref}</code>
+          Ref <code>{ref}</code>
         </p>
         <p>
-          Payment recorded as <strong>Stripe test / mock</strong> (<code>pi_test_*</code>). No live
-          charge in this kit demo. A production install swaps this step for real Stripe Checkout.
+          I’ll follow up at the email you used. This demo used a practice payment — nothing was
+          charged.
         </p>
         <p style={{ marginBottom: 0 }}>
-          Unserious requests without payment never reach the creator inbox.
+          Want to tweak something? Message me from your space anytime.
         </p>
       </div>
       <div className="inf-actions">
         <Link className="inf-btn" to="/portfolios/influencers/account">
-          Open my dashboard
+          Open my space
         </Link>
         <Link className="inf-btn inf-btn--ghost" to="/portfolios/influencers/offers">
-          Book another offer
+          Book something else
         </Link>
         <Link className="inf-btn inf-btn--ghost" to="/portfolios/influencers">
-          Back to site
+          Back to {creator.name.split(' ')[0]}
         </Link>
       </div>
     </main>

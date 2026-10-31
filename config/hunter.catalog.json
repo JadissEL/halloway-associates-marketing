@@ -1,0 +1,45 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Chrome DevTools MCP — hunter.io (elantaki.dijadiss@gmail.com) + GET /v2/account",
+  "account": {
+    "name": "Jadiss EL ANTAKI",
+    "email": "elantaki.dijadiss@gmail.com",
+    "plan": "Free",
+    "plan_level": 0,
+    "team_id": 7430313,
+    "reset_date": "2026-11-24",
+    "credits": { "used": 0, "available": 50, "remaining": 50 },
+    "searches": { "used": 0, "available": 50, "remaining": 50 },
+    "verifications": { "used": 0, "available": 100, "remaining": 100 },
+    "leads_saved": 11,
+    "email_accounts_slots": { "included": 1, "used": 0 }
+  },
+  "api": {
+    "keys_url": "https://hunter.io/api-keys",
+    "key_created": "2026-09-24",
+    "env": ["HUNTER_API_KEY"],
+    "docs": "https://hunter.io/api-documentation/v2",
+    "endpoints_needed_for_outbound": [
+      "GET /v2/domain-search",
+      "GET /v2/email-finder",
+      "GET /v2/email-verifier",
+      "POST /v2/discover"
+    ]
+  },
+  "mcp": {
+    "url": "https://mcp.hunter.io/mcp",
+    "cursor_deeplink": "cursor://anysphere.cursor-deeplink/mcp/install?name=Hunter&config=eyJ1cmwiOiJodHRwczovL21jcC5odW50ZXIuaW8vbWNwIn0=",
+    "setup_ui": "https://hunter.io/connected-apps?tab=mcp",
+    "status": "plugin-hunter-hunter needsAuth — user skipped OAuth this session; API key vaulted for outbound-os"
+  },
+  "repo_wiring": {
+    "outbound_os_env": "outbound-os/.env + outbound-os/server/.env → HUNTER_API_KEY",
+    "code_status": "env stub only — no Hunter client implementation yet in outbound-os",
+    "still_to_set": [
+      "Approve Hunter MCP OAuth in Cursor (plugin-hunter-hunter) OR Add to Cursor deeplink",
+      "Wire outbound-os discover/enrich to Hunter API when building lead discovery",
+      "Keep LAUNCH/DRY_RUN off — enrichment only, no live send",
+      "Optional: connect sending mailbox in Hunter Sequences (1 free slot unused)"
+    ]
+  }
+}

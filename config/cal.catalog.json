@@ -1,0 +1,34 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Chrome DevTools MCP — app.cal.com/links (logged-in session)",
+  "username": "jadiss-el-antaki-igubeb",
+  "public_page": "https://cal.com/jadiss-el-antaki-igubeb",
+  "primary_booking_url": "https://cal.com/jadiss-el-antaki-igubeb/30min",
+  "env": {
+    "VITE_CAL_URL": "https://cal.com/jadiss-el-antaki-igubeb/30min"
+  },
+  "event_types": [
+    {
+      "title": "Rendez-vous de 30 min",
+      "slug": "30min",
+      "duration_min": 30,
+      "enabled": true,
+      "url": "https://cal.com/jadiss-el-antaki-igubeb/30min"
+    },
+    {
+      "title": "Rendez-vous de 15 min",
+      "slug": "15min",
+      "duration_min": 15,
+      "enabled": true,
+      "url": "https://cal.com/jadiss-el-antaki-igubeb/15min"
+    },
+    {
+      "title": "Rendez-vous secret",
+      "slug": "secret",
+      "duration_min": 15,
+      "enabled": false,
+      "hidden": true,
+      "url": "https://cal.com/jadiss-el-antaki-igubeb/secret"
+    }
+  ]
+}

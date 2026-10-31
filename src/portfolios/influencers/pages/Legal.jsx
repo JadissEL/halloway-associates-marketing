@@ -3,44 +3,48 @@ import { creator, kitMeta } from '../data'
 export default function InfluencerLegal() {
   return (
     <main className="inf-wrap inf-section" style={{ maxWidth: 720 }}>
-      <p className="inf-label">Legal stubs — customize per client jurisdiction</p>
+      <p className="inf-label">The fine print</p>
       <h1 className="display" style={{ fontSize: '2rem' }}>
-        Booking terms (placeholder)
+        How booking works with me
       </h1>
-      <div className="inf-card" style={{ display: 'grid', gap: '1rem' }}>
+      <p style={{ color: 'var(--inf-muted)', maxWidth: '52ch' }}>
+        Plain-language notes for this sample site. A live client version gets reviewed by their
+        counsel for their country.
+      </p>
+      <div className="inf-card" style={{ display: 'grid', gap: '1rem', marginTop: '1.25rem' }}>
         <section>
-          <h2 style={{ fontSize: '1.1rem' }}>1. Nature of services</h2>
+          <h2 style={{ fontSize: '1.1rem' }}>1. What you’re booking</h2>
           <p>
-            Sessions, collaborations, and meets sold via this site are private services offered by{' '}
-            {creator.name}. This page is a stub for counsel review — not legal advice.
+            Sessions, collaborations, and meets sold here are private services from {creator.name} —
+            not employment, and not a subscription unless we say so.
           </p>
         </section>
         <section>
-          <h2 style={{ fontSize: '1.1rem' }}>2. Payments & cancellations</h2>
+          <h2 style={{ fontSize: '1.1rem' }}>2. Payments &amp; cancellations</h2>
           <p>
-            Deposits may be non-refundable after a stated window. Stripe processes cards; chargebacks
-            follow card network rules. Replace with client-specific policy.
+            A deposit may hold your date. Refund windows depend on the offer. Card payments go through
+            Stripe; chargebacks follow the card networks.
           </p>
         </section>
         <section>
-          <h2 style={{ fontSize: '1.1rem' }}>3. Content & likeness</h2>
+          <h2 style={{ fontSize: '1.1rem' }}>3. Content &amp; likeness</h2>
           <p>
-            Brand collabs require a separate usage-rights agreement. Fans may not record meets without
-            written consent.
+            Brand work needs a short usage-rights note before we publish. Please don’t record a meet
+            or call without asking first.
           </p>
         </section>
         <section>
           <h2 style={{ fontSize: '1.1rem' }}>4. Privacy</h2>
           <p>
-            Intake data is used to fulfill bookings. Add GDPR/CCPA language for the client’s markets
-            ({kitMeta.studio} target markets include EU, UK, US, MENA, APAC).
+            I use your intake details to fulfill the booking and reply to you. Live sites add the
+            privacy wording required where the creator sells.
           </p>
         </section>
         <section>
-          <h2 style={{ fontSize: '1.1rem' }}>5. Studio</h2>
+          <h2 style={{ fontSize: '1.1rem' }}>5. This site</h2>
           <p>
-            Site product kit by {kitMeta.studio} — {kitMeta.studioEmail}. Operating entity fields
-            (VAT, company number) go here per client.
+            Built with {kitMeta.studio} ({kitMeta.studioEmail}). Company / VAT fields belong to the
+            creator’s operating entity.
           </p>
         </section>
       </div>

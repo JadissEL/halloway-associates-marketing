@@ -35,13 +35,12 @@ export default function InfluencerCard() {
 
   return (
     <main className="inf-wrap inf-section">
-      <p className="inf-label">Carte de visite</p>
+      <p className="inf-label">Business card</p>
       <h1 className="display" style={{ fontSize: '2rem', margin: 0 }}>
-        Print + digital card
+        A card people can actually use
       </h1>
-      <p style={{ color: 'var(--inf-muted)' }}>
-        QR opens the offers / booking page on this origin (local demo or production). Print → PDF for
-        physical cards.
+      <p style={{ color: 'var(--inf-muted)', maxWidth: '48ch' }}>
+        Print it, or share the link. The QR opens my booking page.
       </p>
 
       <div className="inf-grid inf-grid--2" style={{ marginTop: '1.5rem', alignItems: 'start' }}>
@@ -62,14 +61,14 @@ export default function InfluencerCard() {
         </div>
 
         <div className="inf-card">
-          <p className="inf-label">Digital card</p>
+          <p className="inf-label">Share</p>
           <h2 className="display" style={{ fontSize: '1.35rem' }}>
-            Share link
+            Link for phones
           </h2>
           <p style={{ color: 'var(--inf-muted)', wordBreak: 'break-all' }}>{bookUrl}</p>
           <div className="inf-actions" style={{ marginTop: '0.75rem' }}>
             <button type="button" className="inf-btn" onClick={copyDigital}>
-              {copied ? 'Copied' : 'Copy booking URL'}
+              {copied ? 'Copied' : 'Copy link'}
             </button>
             <a className="inf-btn inf-btn--ghost" href={bookUrl}>
               Open offers

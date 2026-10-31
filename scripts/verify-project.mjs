@@ -40,8 +40,11 @@ const REQUIRED_DOCS = [
   'config/brand.json',
   'config/offers.json',
   'config/niches.json',
+  'config/portfolios.json',
   'docs/business/OFFERS_AND_DISCOUNTS.md',
   'docs/OFFER_CHEATSHEET.md',
+  'docs/PORTFOLIO_SHARE.md',
+  'docs/DEMO_NICHE_RESEARCH.md',
   '.env.example',
   'outbound-os/.env.example',
 ]
@@ -169,6 +172,31 @@ try {
   } else ok('no competing business/04-icp tree')
 } catch (e) {
   fail(`niches.json: ${e.message}`)
+}
+
+/* 3b. Portfolio share registry */
+console.log('\n--- Portfolio share kits ---')
+try {
+  const portfolios = readJson('config/portfolios.json')
+  const kits = portfolios.kits || []
+  if (kits.length >= 1) ok(`config/portfolios.json has ${kits.length} kit(s)`)
+  else fail('portfolios.json kits empty')
+  const slugs = new Set()
+  for (const k of kits) {
+    if (!k.slug || !k.sharePath || !k.studioPath) {
+      fail(`portfolio kit missing slug/sharePath/studioPath: ${JSON.stringify(k)}`)
+      continue
+    }
+    if (slugs.has(k.slug)) fail(`duplicate portfolio slug: ${k.slug}`)
+    slugs.add(k.slug)
+    if (!String(k.sharePath).startsWith('/p/')) {
+      fail(`sharePath should be under /p/: ${k.slug} → ${k.sharePath}`)
+    }
+  }
+  if (slugs.has('influencers')) ok('influencers share kit registered')
+  else fail('influencers missing from portfolios.json')
+} catch (e) {
+  fail(`portfolios.json: ${e.message}`)
 }
 
 /* 4. Launch switch OFF */

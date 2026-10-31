@@ -1,0 +1,75 @@
+{
+  "captured_at": "2026-10-31",
+  "updated_at": "2026-10-31T17:30",
+  "source": "Supabase MCP (authenticated) + Chrome dashboard",
+  "repo_role": {
+    "marketing_db_sot": "Neon remains primary Postgres for outbound-os Prisma unless founder switches",
+    "supabase_halloway": "Active project ready for Auth/Storage/Realtime or parallel data",
+    "supabase_in_app_code": false
+  },
+  "mcp": {
+    "namespace": "user-supabase",
+    "status": "authenticated",
+    "config_url": "https://mcp.supabase.com/mcp?project_ref=qzqgjwxaoyczseyzgtrp&features=docs,account,database,debugging,development,functions,branching,feedback",
+    "tools": [
+      "execute_sql",
+      "list_tables",
+      "apply_migration",
+      "get_project_url",
+      "get_publishable_keys",
+      "get_advisors",
+      "edge functions",
+      "branching",
+      "search_docs"
+    ]
+  },
+  "canonical": {
+    "name": "Halloway",
+    "ref": "qzqgjwxaoyczseyzgtrp",
+    "status": "Healthy",
+    "region": "eu-west-3",
+    "compute": "Nano",
+    "url": "https://qzqgjwxaoyczseyzgtrp.supabase.co",
+    "org": "JadissEL's Org (eousjgihxsovzgimuvqw)",
+    "plan": "Free",
+    "tables_public": [],
+    "env": [
+      "SUPABASE_URL",
+      "VITE_SUPABASE_URL",
+      "SUPABASE_ANON_KEY",
+      "VITE_SUPABASE_ANON_KEY",
+      "SUPABASE_PUBLISHABLE_KEY",
+      "SUPABASE_DB_PASSWORD",
+      "SUPABASE_DATABASE_URL",
+      "SUPABASE_DATABASE_URL_POOLER",
+      "HALLOWAY_DB_PASSWORD"
+    ],
+    "db": {
+      "password_vault_key": "SUPABASE_DB_PASSWORD",
+      "direct_url_key": "SUPABASE_DATABASE_URL",
+      "pooler_url_key": "SUPABASE_DATABASE_URL_POOLER",
+      "host_direct": "db.qzqgjwxaoyczseyzgtrp.supabase.co:5432",
+      "note": "Founder clarified 2026-10-31: password XCDX… was Supabase Halloway, NOT Neon. Neon NEON_DB_PASSWORD cleared; Neon URLs need real Neon password if used."
+    },
+    "keys_note": "anon JWT + sb_publishable_ + DB password vaulted. service_role NOT fetched via MCP — paste from dashboard Settings → API Keys if needed server-side."
+  },
+  "legacy_paused": [
+    {
+      "name": "ShopTheBarber",
+      "ref": "rvgwpqcccecrhocnontt",
+      "status": "paused_unrestorable_dashboard"
+    },
+    {
+      "name": "BACMA",
+      "ref": "puvehkjhnpiorhluftuq",
+      "status": "paused_resumable_until_2027-04-14"
+    }
+  ],
+  "still_to_set": [
+    "Optional: vault SUPABASE_SERVICE_ROLE_KEY from dashboard (server-only)",
+    "Neon DB password (separate) if Prisma reconnect needed — not the Supabase password",
+    "Wire Vite/outbound only when a feature needs Supabase",
+    "Free plan: confirm STB/BACMA slots vs Halloway Active count"
+  ]
+}
+

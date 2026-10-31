@@ -1,0 +1,52 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Chrome DevTools MCP — app.ahrefs.com (logged-in Free plan)",
+  "plan": "Free",
+  "api_mcp": {
+    "status": "Insufficient plan",
+    "note": "Ahrefs API/MCP management + Site Explorer tools require paid plan. Free Domain Rating API also rejected."
+  },
+  "account_ui": {
+    "upgrade_cta": true,
+    "rank_tracker": "Not available on Free plan"
+  },
+  "projects": [
+    {
+      "name": "Hallowayassociates",
+      "project_id": 10623275,
+      "target": "hallowayassociates.com/",
+      "mode": "subdomains",
+      "dashboard_url": "https://app.ahrefs.com/site-explorer/overview?mode=subdomains&projectId=10623275&target=hallowayassociates.com%2F&volume_type=monthly",
+      "metrics_snapshot": {
+        "http_note": "Overview shows 301 for target URL",
+        "domain_rating": 0,
+        "url_rating": 0,
+        "ahrefs_rank": null,
+        "backlinks_live": "1.2K",
+        "backlinks_all_time": "1.5K",
+        "ref_domains_live": 711,
+        "ref_domains_all_time": 887,
+        "ref_domains_dofollow": 59,
+        "ref_domains_nofollow": 652,
+        "backlinks_dofollow": 124,
+        "backlinks_nofollow": 1074,
+        "organic_keywords": 0,
+        "organic_traffic": 0,
+        "paid_keywords": 0,
+        "paid_traffic": 0,
+        "crawled_pages": 71,
+        "http_200": 69,
+        "http_3xx": 2,
+        "ai_brand_radar_citations": 0
+      }
+    },
+    {
+      "name": "Shopthebarber",
+      "project_id": 10623274,
+      "target": "shopthebarber.app/",
+      "dashboard_url": "https://app.ahrefs.com/site-explorer/overview?mode=subdomains&projectId=10623274&target=shopthebarber.app%2F&volume_type=monthly",
+      "note": "Other product; tracked in same Ahrefs Free workspace"
+    }
+  ],
+  "seo_implication_for_halloway": "DR/organic are zero; many low-UR/nofollow backlinks — prioritize quality dofollow + indexed content, not raw link count. Site live on Vercel; crawl sees 71 pages."
+}

@@ -1,0 +1,37 @@
+{
+  "account_id": "acct_1P3rXpRq6QrLno3V",
+  "account_display_name": "CLEANCOLAB",
+  "livemode": true,
+  "currency": "eur",
+  "note": "Catalog via Stripe MCP 2026-10-31. Live pk_ + rk_ vaulted permanently 2026-10-31 (STRIPE_PUBLISHABLE_KEY / VITE_STRIPE_PK / STRIPE_SECRET_KEY). Keys never committed to git.",
+  "dashboard_api_keys": "https://dashboard.stripe.com/acct_1P3rXpRq6QrLno3V/apikeys",
+  "products": {
+    "starter": {
+      "product_id": "prod_VXWgq5DEpW8kG3",
+      "price_id": "price_1UWRdXRq6QrLno3VDct5rEpS",
+      "unit_amount_eur_cents": 89000
+    },
+    "pro": {
+      "product_id": "prod_VXWhfXsfQUyR0M",
+      "price_id": "price_1UWRdeRq6QrLno3VuQXpFa1w",
+      "unit_amount_eur_cents": 119000,
+      "payment_link": "https://buy.stripe.com/4gMfZjbnNgWG7EIdbN2Ry00"
+    },
+    "authority": {
+      "product_id": "prod_VXWht6obCw9kKE",
+      "price_id": "price_1UWRdfRq6QrLno3V6TadVAqQ",
+      "unit_amount_eur_cents": 149000
+    },
+    "pro_deposit_50": {
+      "product_id": "prod_VXWhCxWtXdy1hE",
+      "price_id": "price_1UWRdjRq6QrLno3VGkcVuvIo",
+      "unit_amount_eur_cents": 59500,
+      "payment_link": "https://buy.stripe.com/3cIaEZ1Ndayif7ab3F2Ry01"
+    },
+    "consulting_45": {
+      "product_id": "prod_VXWh0JPU6J0odP",
+      "price_id": "price_1UWRdhRq6QrLno3VK8AeEYFi",
+      "unit_amount_eur_cents": 15000
+    }
+  }
+}

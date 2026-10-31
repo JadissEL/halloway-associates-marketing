@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "note": "Shareable niche portfolios for commercials. Studio gallery stays on /kits; prospects get /p/<slug> only.",
+  "sharePathPrefix": "/p",
+  "kits": [
+    {
+      "slug": "influencers",
+      "title": "Influencers / creators",
+      "titleFr": "Influenceurs / créateurs",
+      "status": "live",
+      "kind": "full_kit",
+      "nicheId": "influencers",
+      "studioPath": "/portfolios/influencers",
+      "sharePath": "/p/influencers",
+      "blurb": "Full kit — site, offers, booking, media kit, card, dashboards.",
+      "audience": "Creators, managers, brand partnerships"
+    },
+    {
+      "slug": "salons",
+      "title": "Hair salons & barbers",
+      "titleFr": "Salons & barbiers",
+      "status": "demo",
+      "kind": "demo",
+      "nicheId": "hair_salons",
+      "studioPath": "/demos/salon",
+      "sharePath": "/p/salons",
+      "blurb": "Deep platform demo: services, team, booking+deposits, waitlist, client/staff portals, policies.",
+      "audience": "Salon / barbershop owners"
+    },
+    {
+      "slug": "cafes",
+      "title": "Cafés & restaurants",
+      "titleFr": "Cafés & restaurants",
+      "status": "demo",
+      "kind": "demo",
+      "nicheId": "cafes",
+      "studioPath": "/demos/cafe",
+      "sharePath": "/p/cafes",
+      "blurb": "Deep platform demo: allergen menu, reserve, takeaway orders, loyalty, kitchen tickets.",
+      "audience": "Café / restaurant owners"
+    },
+    {
+      "slug": "avocats",
+      "title": "Lawyers / cabinets",
+      "titleFr": "Avocats",
+      "status": "demo",
+      "kind": "demo",
+      "nicheId": "lawyers",
+      "studioPath": "/demos/avocat",
+      "sharePath": "/p/avocats",
+      "blurb": "Deep platform demo: practice areas, secure intake, consult, client portal, fees, GDPR.",
+      "audience": "Law firms / solo practitioners"
+    },
+    {
+      "slug": "livreurs",
+      "title": "Couriers / local services",
+      "titleFr": "Livreurs / services locaux",
+      "status": "demo",
+      "kind": "demo",
+      "nicheId": "couriers",
+      "studioPath": "/demos/livreur",
+      "sharePath": "/p/livreurs",
+      "blurb": "Deep platform demo: zones/rates, quote, live track, ePOD, dispatch, driver & B2B.",
+      "audience": "Couriers / field services"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Free-tier dashboard pastes (API cannot return these)
 
-Permanent skip: **Hunter · GitHub · Namecheap · Ahrefs · G2 · Supabase · n8n-local**
+Permanent skip: **Namecheap · Ahrefs · G2 · n8n-local** (Hunter vaulted; Supabase inventoried — Neon remains DB SoT; both Free projects paused)
 
 Paste values into **`.secrets/TOKENS.env`** only (gitignored). Do not commit.
 

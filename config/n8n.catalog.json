@@ -1,0 +1,59 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "npm global install + local editor setup (Chrome DevTools)",
+  "install": {
+    "method": "npm -g n8n@latest",
+    "version": "2.45.7",
+    "node": "v24.13.1",
+    "binary": "%APPDATA%\\npm\\n8n.cmd"
+  },
+  "runtime": {
+    "base_url": "http://127.0.0.1:5678",
+    "listen": "127.0.0.1:5678",
+    "data_dir": "%USERPROFILE%\\.n8n",
+    "start_script": "%USERPROFILE%\\.n8n\\start.ps1",
+    "env_script": "%USERPROFILE%\\.n8n\\env.ps1",
+    "mcp_enabled_via_env": true,
+    "env_flags": [
+      "N8N_MCP_MANAGED_BY_ENV=true",
+      "N8N_MCP_ACCESS_ENABLED=true",
+      "N8N_LISTEN_ADDRESS=127.0.0.1",
+      "N8N_PORT=5678"
+    ]
+  },
+  "owner": {
+    "email": "jadisselantaki@hallowayassociates.com",
+    "first_name": "Jadiss",
+    "last_name": "El Antaki",
+    "password_vault_key": "N8N_OWNER_PASSWORD"
+  },
+  "mcp": {
+    "status": "enabled",
+    "server_url": "http://localhost:5678/mcp-server/http",
+    "cursor_server": "n8n-local",
+    "token_vault_key": "N8N_MCP_TOKEN",
+    "verified_initialize": true,
+    "note": "Restart Cursor (or reload MCP) so User env N8N_MCP_TOKEN is picked up by n8n-local / supergateway"
+  },
+  "api": {
+    "key_label": "Halloway Cursor",
+    "expires": "never",
+    "vault_key": "N8N_API_KEY",
+    "header": "X-N8N-API-KEY",
+    "docs": "http://127.0.0.1:5678/api/v1/docs"
+  },
+  "vault_keys": [
+    "N8N_MCP_TOKEN",
+    "N8N_MCP_URL",
+    "N8N_API_KEY",
+    "N8N_BASE_URL",
+    "N8N_OWNER_EMAIL",
+    "N8N_OWNER_PASSWORD",
+    "N8N_ENCRYPTION_KEY"
+  ],
+  "notes": [
+    "Python task runner skipped (venv missing) — JS runner OK for local",
+    "npm install outside Docker is deprecated by n8n long-term; Docker when engine is available",
+    "LAUNCH_SWITCH / DRY_RUN unchanged — no live outreach from n8n yet"
+  ]
+}

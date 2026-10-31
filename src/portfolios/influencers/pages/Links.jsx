@@ -14,7 +14,7 @@ export default function InfluencerLinks() {
       <h1 className="display" style={{ fontSize: '2rem', margin: '0.75rem 0 0.25rem' }}>
         {creator.name}
       </h1>
-      <p className="inf-label">{creator.handle} · link-in-bio hub</p>
+      <p className="inf-label">{creator.handle}</p>
       <p style={{ maxWidth: '36ch', margin: '0.75rem auto 1.5rem', color: 'var(--inf-muted)' }}>
         {creator.tagline}
       </p>

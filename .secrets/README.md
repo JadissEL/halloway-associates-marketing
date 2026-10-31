@@ -19,5 +19,5 @@ Same keys that must work everywhere also live in:
 
 ## Skip list (this Marketing repo)
 
-Hunter · Namecheap · Ahrefs · G2 · Supabase · n8n-local  
+Namecheap · Ahrefs · G2 · Supabase · n8n-local (Hunter vaulted)  
 GitHub token is stored globally (founder override).

@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Chrome DevTools MCP — formspree.io (elantaki.dijadiss@gmail.com)",
+  "account": {
+    "name": "Jadiss EL ANTAKI",
+    "email": "elantaki.dijadiss@gmail.com",
+    "plan": "Free",
+    "monthly_submissions": { "used": 0, "limit": 50 },
+    "linked_emails": [
+      "elantaki.dijadiss@gmail.com",
+      "antayco.info@gmail.com"
+    ],
+    "api_access": false,
+    "project": {
+      "name": "MY FIRST PROJECT",
+      "id": "2853965225353280801"
+    }
+  },
+  "form": {
+    "id": "xdkwrwwg",
+    "name": "AntaY Contact Form",
+    "endpoint": "https://formspree.io/f/xdkwrwwg",
+    "enabled": true,
+    "archive": true,
+    "formshield": true,
+    "captcha": "disabled",
+    "notify_email": "antayco.info@gmail.com",
+    "submissions_last_30d": 0,
+    "overview_url": "https://formspree.io/forms/xdkwrwwg/overview",
+    "env": ["VITE_FORMSPREE_ID", "FORMSPREE_ENDPOINT"]
+  },
+  "note": "Endpoint is public (form id). No secret API key on Free plan. Optional later: rename form + add jadisselantaki@hallowayassociates.com as notify target (needs verified linked email)."
+}

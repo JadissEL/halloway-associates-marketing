@@ -24,13 +24,13 @@ function Panel() {
         <p style={{ fontWeight: 600, margin: '0 0 0.5rem' }}>{user.name}</p>
         <p style={{ fontSize: '0.85rem', color: 'var(--inf-muted)', margin: 0 }}>{user.email}</p>
         <p className="inf-label" style={{ marginTop: '1rem' }}>
-          Role: {user.role}
+          Joined as {user.role}
         </p>
-        <Link to="/portfolios/influencers/offers">Book an offer</Link>
-        <Link to="/portfolios/influencers/contact">Message {creator.name}</Link>
-        <Link to="/portfolios/influencers/connect">Edit profile</Link>
+        <Link to="/portfolios/influencers/offers">Book something</Link>
+        <Link to="/portfolios/influencers/contact">Message {creator.name.split(' ')[0]}</Link>
+        <Link to="/portfolios/influencers/connect">Update my details</Link>
         <button type="button" className="inf-btn inf-btn--ghost" style={{ marginTop: '1rem', width: '100%' }} onClick={signOut}>
-          Disconnect
+          Sign out
         </button>
       </aside>
 
@@ -38,11 +38,10 @@ function Panel() {
         <section className="inf-card">
           <p className="inf-label">Overview</p>
           <h2 className="display" style={{ fontSize: '1.5rem', margin: 0 }}>
-            Hello, {user.name}
+            Hi, {user.name}
           </h2>
           <p style={{ color: 'var(--inf-muted)' }}>
-            Your little dashboard — requests and messages with {creator.name}. Production kits sync
-            this to a real account DB.
+            Your bookings and messages with {creator.name} live here.
           </p>
           <div className="inf-stats">
             <div>
@@ -62,11 +61,11 @@ function Panel() {
 
         <section className="inf-card" style={{ overflowX: 'auto' }}>
           <h3 className="display" style={{ fontSize: '1.25rem' }}>
-            My booking requests
+            Your requests
           </h3>
           {requests.length === 0 ? (
             <p style={{ color: 'var(--inf-muted)' }}>
-              None yet. <Link to="/portfolios/influencers/offers">Browse offers</Link>
+              Nothing yet. <Link to="/portfolios/influencers/offers">See what’s open</Link>
             </p>
           ) : (
             <table className="inf-table">
@@ -98,11 +97,11 @@ function Panel() {
 
         <section className="inf-card">
           <h3 className="display" style={{ fontSize: '1.25rem' }}>
-            My messages
+            Messages
           </h3>
           {messages.length === 0 ? (
             <p style={{ color: 'var(--inf-muted)' }}>
-              No messages. <Link to="/portfolios/influencers/contact">Send one</Link>
+              No messages yet. <Link to="/portfolios/influencers/contact">Say hello</Link>
             </p>
           ) : (
             <ul className="inf-list" style={{ listStyle: 'none', padding: 0 }}>
@@ -131,11 +130,11 @@ export default function UserDashboard() {
 
   return (
     <main className="inf-wrap inf-section">
-      <p className="inf-label">User dashboard</p>
+      <p className="inf-label">Your space</p>
       <h1 className="display" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', margin: '0 0 1rem' }}>
-        My account
+        Welcome back
       </h1>
-      <RequireUser intent="open your dashboard">
+      <RequireUser intent="open your space">
         <Panel />
       </RequireUser>
     </main>

@@ -30,11 +30,11 @@ function ContactForm() {
       <div className="inf-banner inf-banner--ok" style={{ maxWidth: 520 }}>
         <p className="inf-label">Sent</p>
         <p>
-          Message from <strong>{user.email}</strong> reached {creator.name}&apos;s inbox (kit demo
-          storage). Ref: <code>{sent.id}</code>
+          Thanks — {creator.name} got your note from <strong>{user.email}</strong>. Ref:{' '}
+          <code>{sent.id}</code>
         </p>
         <Link className="inf-btn" to="/portfolios/influencers/account">
-          Open my dashboard
+          Back to my space
         </Link>
       </div>
     )
@@ -69,8 +69,8 @@ export default function InfluencerContact() {
         Message {creator.name}
       </h1>
       <p style={{ maxWidth: '48ch', color: 'var(--inf-muted)' }}>
-        Email connection required — no anonymous contact. Prefer a paid offer?{' '}
-        <Link to="/portfolios/influencers/offers">Browse offers</Link>.
+        Leave your email first so I know who’s writing. Looking for a paid session instead?{' '}
+        <Link to="/portfolios/influencers/offers">See what’s open</Link>.
       </p>
       <div style={{ marginTop: '1.5rem' }}>
         <RequireUser intent="send a message">

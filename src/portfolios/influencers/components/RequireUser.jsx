@@ -11,16 +11,15 @@ export default function RequireUser({ children, intent = 'continue' }) {
 
   return (
     <div className="inf-card" style={{ maxWidth: 480, margin: '2rem auto' }}>
-      <p className="inf-label">Email required</p>
+      <p className="inf-label">Quick step</p>
       <h2 className="display" style={{ fontSize: '1.5rem', margin: '0.25rem 0 0.75rem' }}>
-        Connect with email to {intent}
+        Leave your email to {intent}
       </h2>
       <p style={{ color: 'var(--inf-muted)' }}>
-        No anonymous DMs. Connect once — then book, message, and manage your requests from your
-        dashboard.
+        One time — then you can message, book, and check your requests from your space.
       </p>
       <Link className="inf-btn inf-btn--lime" to={`/portfolios/influencers/connect?next=${next}`}>
-        Connect with email
+        Continue with email
       </Link>
     </div>
   )

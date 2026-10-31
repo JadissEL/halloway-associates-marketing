@@ -13,6 +13,8 @@ import Audit from './pages/Audit'
 import Intake from './pages/Intake'
 import BusinessCard from './pages/BusinessCard'
 import AdminLeads from './pages/AdminLeads'
+import BuiltBy from './pages/BuiltBy'
+import ShareEntry from './pages/ShareEntry'
 import { MentionsLegales, Confidentialite, CGV } from './pages/legal/LegalPages'
 import SalonDemo from './demos/SalonDemo'
 import CafeDemo from './demos/CafeDemo'
@@ -107,6 +109,10 @@ export default function App() {
         <Route path="demos/cafe" element={<CafeDemo />} />
         <Route path="demos/avocat" element={<LawyerDemo />} />
         <Route path="demos/livreur" element={<CourierDemo />} />
+
+        {/* Commercial share entries — one niche only (no studio gallery) */}
+        <Route path="p/:slug" element={<ShareEntry />} />
+        <Route path="built-by" element={<BuiltBy />} />
       </Routes>
     </BrowserRouter>
   )

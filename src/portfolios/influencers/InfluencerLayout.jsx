@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, Link } from 'react-router-dom'
 import Seo from '../../components/Seo'
+import { useShareMode } from '../../components/ShareModeGuard'
 import { creator, kitMeta } from './data'
 import { getCreatorSession, getUserSession } from './lib/session'
 import './kit.css'
@@ -46,6 +47,7 @@ function NavItems({ user, creatorSession, onNavigate }) {
 }
 
 export default function InfluencerLayout() {
+  const { shareMode } = useShareMode('influencers')
   const [user, setUser] = useState(null)
   const [creatorSession, setCreatorSession] = useState(null)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -65,13 +67,20 @@ export default function InfluencerLayout() {
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
+  const studioTo = shareMode ? '/built-by' : '/'
+  const studioHref = shareMode ? undefined : kitMeta.studioUrl
 
   return (
-    <div className="inf-root">
+    <div className={`inf-root${shareMode ? ' inf-root--share' : ''}`}>
       <Seo
-        title={`${creator.name} — book paid access | ${kitMeta.studio}`}
+        title={`${creator.name} (${creator.handle}) — collabs, calls & lessons`}
         description={creator.bio}
       />
+      {shareMode ? (
+        <p className="inf-share-ribbon" role="status">
+          Niche demo · Influencers — shared for your review
+        </p>
+      ) : null}
       <header className="inf-top">
         <Link to="/portfolios/influencers" className="inf-top__brand" onClick={closeMenu}>
           <img src={creator.portrait} alt="" />
@@ -86,8 +95,8 @@ export default function InfluencerLayout() {
           <NavItems user={user} creatorSession={creatorSession} />
         </nav>
         <div className="inf-top__end">
-          <Link className="inf-top__studio" to="/" onClick={closeMenu}>
-            {kitMeta.studio}
+          <Link className="inf-top__studio" to={studioTo} onClick={closeMenu}>
+            {shareMode ? 'Built by Halloway' : kitMeta.studio}
           </Link>
           <button
             type="button"
@@ -111,15 +120,25 @@ export default function InfluencerLayout() {
       <Outlet />
       <footer className="inf-wrap inf-footer">
         <div>
-          <strong>{creator.name}</strong> · Digital portfolio by{' '}
-          <a href={kitMeta.studioUrl}>{kitMeta.studio}</a>
+          <strong>{creator.name}</strong>
+          <span className="inf-footer__muted">
+            {' '}
+            · site by{' '}
+            {shareMode ? (
+              <Link to="/built-by">{kitMeta.studio}</Link>
+            ) : (
+              <a href={studioHref}>{kitMeta.studio}</a>
+            )}
+          </span>
         </div>
         <div>
-          <Link to="/portfolios/influencers/legal">Legal</Link>
+          <Link to="/portfolios/influencers/legal">Terms</Link>
           {' · '}
           <Link to="/portfolios/influencers/card">Card</Link>
           {' · '}
-          <Link to="/portfolios/influencers/connect">Connect email</Link>
+          <Link to="/portfolios/influencers/faq">FAQ</Link>
+          {' · '}
+          <Link to="/portfolios/influencers/connect">Say hi</Link>
         </div>
       </footer>
     </div>

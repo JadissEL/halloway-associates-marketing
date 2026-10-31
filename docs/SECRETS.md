@@ -14,7 +14,7 @@ See `C:\Users\Jadiss\.cursor\CROSS_PROJECT_MCP.md`.
 
 ## Marketing skip (prefer not to use in this repo)
 
-Hunter · Namecheap · Ahrefs · G2 · Supabase · n8n-local.  
+Namecheap · Ahrefs · G2 · n8n-local. (Hunter vaulted; Supabase org inventoried — no Active Halloway project.)  
 **GitHub:** token stored globally (`GITHUB_PAT` / `GITHUB_TOKEN`) by founder request — MCP bridge enabled user-wide.
 
 ## Ops

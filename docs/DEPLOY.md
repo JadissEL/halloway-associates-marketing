@@ -7,7 +7,7 @@ Zero secrets in git. Use host dashboards / CLI secrets only.
 
 | Resource | ID / name |
 |----------|-----------|
-| Vercel project | `halloway-associates` (`prj_MBjbCDnexhNtYdziZMUZL4qRExfh`) |
+| Vercel project | `halloway-associates` on **jadissels-projects** (`prj_kPi2KBROErSQLIIbtkZ9UGkcAMwH`) · prod alias `https://halloway-associates-alpha.vercel.app` (legacy empty project on Dina team: `prj_MBjbCDnexhNtYdziZMUZL4qRExfh`) |
 | Neon project | `halloway-associates` (`summer-river-76359085`) |
 
 ## Architecture (production)

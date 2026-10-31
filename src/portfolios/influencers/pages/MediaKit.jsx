@@ -4,12 +4,12 @@ import { creator, packages } from '../data'
 export default function InfluencerMediaKit() {
   return (
     <main className="inf-wrap inf-section">
-      <p className="inf-label">Media kit</p>
+      <p className="inf-label">For brands</p>
       <h1 className="display" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', margin: 0 }}>
-        Work with {creator.name}
+        Media kit
       </h1>
       <p style={{ maxWidth: '56ch', color: 'var(--inf-muted)' }}>
-        Audience, niches, and how brands book — one page, no PDF scavenger hunt.
+        Who I reach, what I make, and how to book — all on one page.
       </p>
 
       <div className="inf-grid inf-grid--2" style={{ marginTop: '2rem' }}>
@@ -24,14 +24,12 @@ export default function InfluencerMediaKit() {
             ))}
           </div>
           <h2 className="display" style={{ fontSize: '1.5rem', marginTop: '1.5rem' }}>
-            Audience & fit
+            About the audience
           </h2>
-          <p>{creator.bio}</p>
-          <p>
-            <strong>Location:</strong> {creator.location}
-          </p>
+          <p>{creator.aboutLong || creator.bio}</p>
+          <p>{creator.location}</p>
           <h2 className="display" style={{ fontSize: '1.5rem' }}>
-            Rate bands
+            Typical rates
           </h2>
           <ul className="inf-list">
             {packages.map((p) => (
@@ -41,15 +39,15 @@ export default function InfluencerMediaKit() {
             ))}
           </ul>
           <Link className="inf-btn" style={{ marginTop: '1rem' }} to="/portfolios/influencers/offers">
-            Start a collab request
+            Start a collab
           </Link>
         </div>
       </div>
 
       <p className="inf-banner" style={{ marginTop: '2rem' }}>
-        Full printable rate card: see{' '}
+        Prefer a printable rate card?{' '}
         <a href="/portfolios/influencers/templates/rate-card.md" target="_blank" rel="noreferrer">
-          templates/rate-card.md
+          Download the short version
         </a>
       </p>
     </main>

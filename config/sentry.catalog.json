@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Sentry MCP create_project + Chrome DevTools keys page (elantaki.dijadiss@gmail.com)",
+  "organization": {
+    "slug": "shopthebarber",
+    "web_url": "https://shopthebarber.sentry.io",
+    "region_url": "https://us.sentry.io",
+    "team_slug": "shopthebarber"
+  },
+  "projects": [
+    {
+      "slug": "halloway-web",
+      "name": "halloway-web",
+      "id": "4512348414214144",
+      "platform": "javascript-react",
+      "keys_url": "https://shopthebarber.sentry.io/settings/projects/halloway-web/keys/",
+      "dsn_env": ["SENTRY_DSN", "VITE_SENTRY_DSN"],
+      "note": "Created for Halloway Associates marketing Vite app. DSN stored in vault only."
+    },
+    {
+      "slug": "shopthebarber-web",
+      "note": "Existing STB frontend — do not reuse for Halloway"
+    },
+    {
+      "slug": "shopthebarber-api",
+      "note": "Existing STB API — do not reuse for Halloway"
+    }
+  ]
+}

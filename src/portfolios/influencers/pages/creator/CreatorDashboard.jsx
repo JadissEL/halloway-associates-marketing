@@ -32,9 +32,9 @@ export function CreatorShell() {
       <main className="inf-wrap inf-section">
         <div className="inf-section__head">
           <div>
-            <p className="inf-label">Creator OS · {session?.email}</p>
+            <p className="inf-label">Creator home · {session?.email}</p>
             <h1 className="display" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.35rem)', margin: 0 }}>
-              {creator.name} dashboard
+              Hi {creator.name.split(' ')[0]}
             </h1>
           </div>
           <button type="button" className="inf-btn inf-btn--ghost inf-no-print" onClick={signOut}>

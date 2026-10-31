@@ -28,5 +28,6 @@
 | R17 | Pre-GTM unlock authority | Verdict `READY_TO_UNLOCK_OUTREACH` ≠ auto-ON; only founder types UNLOCK in `LAUNCH_SWITCH` | Agent audits; never flips switch |
 | R18 | Follow-up cadence / tone drift | Canonical = `docs/OUTREACH_FOLLOWUPS.md` + `outreach/followups/` + 5-step influencer sequence/seed | Respect > persistence; max 5 cold; one CTA/link |
 | R19 | Pricing / discount improvisation | SoT = `config/offers.json` + `docs/business/OFFERS_AND_DISCOUNTS.md`; site reads via `src/lib/offers.js`; stack cap 20%; no cold coupons | One price truth |
+| R20 | Studio gallery vs prospect confusion (100 niches) | **Studio** keeps `/kits` + ICP; **prospects** get `/p/<slug>` share isolation (`config/portfolios.json`, share mode, `/built-by`) | Commercials pitch one métier; no second Vite app |
 
 Append new rows; do not silently reverse without a new row.

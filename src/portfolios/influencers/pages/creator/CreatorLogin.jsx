@@ -27,24 +27,34 @@ export default function CreatorLogin() {
     <main className="inf-wrap inf-section">
       <p className="inf-label">Creator</p>
       <h1 className="display" style={{ fontSize: '2rem', margin: 0 }}>
-        Dashboard login
+        Hey {creator.name.split(' ')[0]} — sign in
       </h1>
       <p style={{ color: 'var(--inf-muted)', maxWidth: '48ch' }}>
-        Kit demo auth. Production: magic link / Clerk / OTP. Demo PIN:{' '}
-        <code>{CREATOR_DEMO_PIN}</code> · email <code>{creator.email}</code>
+        Demo access for this sample kit. Use PIN <code>{CREATOR_DEMO_PIN}</code> with{' '}
+        <code>{creator.email}</code>. Live installs use magic link or SSO.
       </p>
       <form className="inf-form" style={{ marginTop: '1.5rem' }} onSubmit={onSubmit}>
-        {error ? <p className="inf-banner" style={{ background: 'rgba(232,90,140,0.2)' }}>{error}</p> : null}
+        {error ? (
+          <p className="inf-banner" style={{ background: 'rgba(232,90,140,0.2)' }}>
+            {error}
+          </p>
+        ) : null}
         <label>
-          Creator email
+          Email
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label>
           PIN
-          <input type="password" required value={pin} onChange={(e) => setPin(e.target.value)} autoComplete="current-password" />
+          <input
+            type="password"
+            required
+            value={pin}
+            onChange={(e) => setPin(e.target.value)}
+            autoComplete="current-password"
+          />
         </label>
         <button className="inf-btn" type="submit">
-          Enter dashboard
+          Open my dashboard
         </button>
         <Link to="/portfolios/influencers">← Public site</Link>
       </form>

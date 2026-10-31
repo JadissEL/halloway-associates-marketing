@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Clerk MCP list_applications + Chrome DevTools API keys (elantaki.dijadiss@gmail.com)",
+  "canonical": {
+    "name": "Halloway Associates",
+    "application_id": "app_3LRHaNDwmtkvuOg1F00XngYtibl",
+    "instance_id": "ins_3LRHaN1Cc3doPPZ7A3LLLyO6Gv4",
+    "environment": "development",
+    "frontend_api": "https://clean-vervet-9406.clerk.accounts.dev",
+    "jwks_url": "https://clean-vervet-9406.clerk.accounts.dev/.well-known/jwks.json",
+    "api_keys_url": "https://dashboard.clerk.com/apps/app_3LRHaNDwmtkvuOg1F00XngYtibl/instances/ins_3LRHaN1Cc3doPPZ7A3LLLyO6Gv4/api-keys",
+    "publishable_env": ["CLERK_PUBLISHABLE_KEY", "VITE_CLERK_PUBLISHABLE_KEY"],
+    "secret_env": ["CLERK_SECRET_KEY"],
+    "note": "Secret + publishable stored in vault only. Dev instance; no production instance yet."
+  },
+  "do_not_use": [
+    {
+      "name": "HallowayAsoociates",
+      "application_id": "app_3JCJAEhXxnZR51qzI3DTqVaN51D",
+      "reason": "Typo duplicate app — prefer canonical Halloway Associates"
+    }
+  ]
+}

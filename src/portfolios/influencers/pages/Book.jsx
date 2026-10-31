@@ -58,26 +58,25 @@ function BookFlow({ offer }) {
     <>
       {creator.calUrl ? (
         <p className="inf-banner" style={{ marginTop: '1rem' }}>
-          Calendar: <a href={creator.calUrl}>{creator.calUrl}</a>
+          Prefer the calendar?{' '}
+          <a href={creator.calUrl} target="_blank" rel="noreferrer">
+            Open my booking link
+          </a>
         </p>
-      ) : (
-        <p className="inf-banner" style={{ marginTop: '1rem' }}>
-          Cal.com placeholder — set <code>creator.calUrl</code> in kit data.js.
-        </p>
-      )}
+      ) : null}
 
       {step === 'intake' && (
         <form className="inf-form" style={{ marginTop: '1.5rem' }} onSubmit={submitIntake}>
           <p className="inf-banner">
             Booking as <strong>{user.email}</strong> ·{' '}
-            <Link to="/portfolios/influencers/connect">change account</Link>
+            <Link to="/portfolios/influencers/connect">switch account</Link>
           </p>
           <label>
             Your name / brand
             <input name="name" required value={form.name} onChange={onChange} />
           </label>
           <label>
-            Email (locked to connected account)
+            Email
             <input name="email" type="email" required value={user.email} readOnly />
           </label>
           <label>
@@ -90,11 +89,24 @@ function BookFlow({ offer }) {
           </label>
           <label>
             Budget (EUR)
-            <input name="budget" required placeholder={`e.g. ${offer.price}`} value={form.budget} onChange={onChange} />
+            <input
+              name="budget"
+              required
+              placeholder={`around ${offer.priceLabel}`}
+              value={form.budget}
+              onChange={onChange}
+            />
           </label>
           <label>
-            Goal
-            <textarea name="goal" rows={4} required value={form.goal} onChange={onChange} />
+            What are you hoping for?
+            <textarea
+              name="goal"
+              rows={4}
+              required
+              placeholder="A short note is enough — launch date, vibe, anything I should know."
+              value={form.goal}
+              onChange={onChange}
+            />
           </label>
           <label>
             Preferred dates / timezone
@@ -110,18 +122,16 @@ function BookFlow({ offer }) {
       {step === 'pay' && (
         <div style={{ marginTop: '1.5rem', maxWidth: 480 }}>
           <div className="inf-card">
-            <p className="inf-label">Stripe test / mock checkout</p>
+            <p className="inf-label">Hold your spot</p>
             <h2 className="display" style={{ fontSize: '1.5rem' }}>
-              Pay {offer.priceLabel}
+              {offer.priceLabel}
             </h2>
             <p style={{ color: 'var(--inf-muted)' }}>
-              Connected as <strong>{user.email}</strong>. This kit demo runs a{' '}
-              <strong>clear mock path</strong> (no Stripe keys required): saves a paid request with{' '}
-              <code>pi_test_*</code>, then opens the success page. Live installs replace this button
-              with Stripe Checkout (test mode keys).
+              You’re booked as <strong>{user.email}</strong>. This demo confirms with a practice
+              payment (no real charge). On a live site, you’d pay securely with card here.
             </p>
             <button className="inf-btn inf-btn--lime" type="button" onClick={simulateStripe}>
-              Complete mock payment
+              Confirm &amp; pay
             </button>
             <button
               className="inf-btn inf-btn--ghost"
@@ -129,7 +139,7 @@ function BookFlow({ offer }) {
               style={{ marginLeft: '0.5rem' }}
               onClick={() => setStep('intake')}
             >
-              Edit intake
+              Edit details
             </button>
           </div>
         </div>
@@ -144,12 +154,13 @@ export default function InfluencerBook() {
 
   return (
     <main className="inf-wrap inf-section">
-      <p className="inf-label">Booking / request</p>
+      <p className="inf-label">Request</p>
       <h1 className="display" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', margin: '0 0 0.5rem' }}>
         {offer.name}
       </h1>
       <p className="inf-price">{offer.priceLabel}</p>
-      <RequireUser intent="book this offer">
+      <p style={{ maxWidth: '48ch', color: 'var(--inf-muted)' }}>{offer.blurb}</p>
+      <RequireUser intent="book this">
         <BookFlow offer={offer} />
       </RequireUser>
     </main>

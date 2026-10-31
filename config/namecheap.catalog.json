@@ -1,0 +1,38 @@
+{
+  "captured_at": "2026-10-31",
+  "source": "Chrome DevTools MCP (logged in as jadiss333 / elantaki.dijadiss@gmail.com session)",
+  "account": {
+    "username": "jadiss333",
+    "api_access": "DENIED",
+    "api_access_reason": "Account does not meet Namecheap API criteria (need $50+ balance, 20+ domains, or $50+ purchases in last 2 years).",
+    "mcp_status": "unavailable until API access qualifies — user-namecheap MCP bridge needs NAMECHEAP_API_KEY"
+  },
+  "domains": [
+    {
+      "name": "hallowayassociates.com",
+      "status": "ACTIVE",
+      "privacy": true,
+      "expires": "2027-06-14",
+      "nameserver_mode": "Custom DNS",
+      "nameservers": ["beau.ns.cloudflare.com", "paityn.ns.cloudflare.com"],
+      "dns_authority": "Cloudflare zone eee74363f7d8a42cd8d243e7543d8cf1",
+      "manage_url": "https://ap.www.namecheap.com/domains/domaincontrolpanel/hallowayassociates.com/domain"
+    },
+    {
+      "name": "shopthebarber.app",
+      "status": "ACTIVE",
+      "privacy": true,
+      "expires": "2027-08-02",
+      "note": "Other project; not Halloway Marketing primary"
+    }
+  ],
+  "cloudflare_crosscheck": {
+    "zone": "hallowayassociates.com",
+    "zone_id": "eee74363f7d8a42cd8d243e7543d8cf1",
+    "status": "active",
+    "apex_a": ["64.29.17.1", "216.198.79.1"],
+    "www_cname": "98691e5652cbc5ad.vercel-dns-017.com",
+    "email_related": ["Cloudflare MX", "Resend DKIM", "Brevo DKIM/DMARC", "send.* Amazon SES SPF"]
+  },
+  "public_ip_for_future_api_whitelist": "5.203.234.209"
+}
